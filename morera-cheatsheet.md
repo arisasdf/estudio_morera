@@ -49,7 +49,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 See https://www.howtographql.com/graphql-ruby/1-getting-started/
 
-- skipped all the skip flags and used postgres for rails (`rails new estudiomorera -d postgresql`)
+- skipped all the skip flags and used postgres for rails (`rails new estudio_morera -d postgresql`)
 - `bundle add graphql` instead of adding manually to Gemfile
 
 ## GraphQL cheatsheet

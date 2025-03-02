@@ -6,7 +6,7 @@ require_relative "config/application"
 require "graphql/rake_task"
 
 GraphQL::RakeTask.new(
-  schema_name: "EstudiomoreraSchema",
+  schema_name: "EstudioMoreraSchema",
   directory: "./app/javascript/graphql",
   dependencies: [:environment]
 )

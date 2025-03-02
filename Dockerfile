@@ -2,8 +2,8 @@
 # check=error=true
 
 # This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
-# docker build -t estudiomorera .
-# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name estudiomorera estudiomorera
+# docker build -t estudio_morera .
+# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name estudio_morera estudio_morera
 
 # For a containerized dev environment, see Dev Containers: https://guides.rubyonrails.org/getting_started_with_devcontainer.html
 

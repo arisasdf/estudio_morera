@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class EstudiomoreraSchema < GraphQL::Schema
+class EstudioMoreraSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 
