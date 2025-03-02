@@ -1,0 +1,10 @@
+<h1>Upload a score</h1>
+
+<%= form_with url: "/uploads/upload", html: { style: "width: 300px; display: flex; flex-direction: column; gap: 10px;"} , method: :post do |form| %>
+  <%= form.label :work_id, "Obra:" %>
+  <%= form.collection_select :work_id, Work.order(:title), :id, :title, include_blank: true %>
+  <%= form.label :score_label, "Edición:" %>
+  <%= form.text_field :score_label %>
+  <%= form.file_field :score %>
+  <%= form.submit "Upload" %>
+<% end %>

@@ -30,11 +30,11 @@ From https://learn.microsoft.com/en-us/windows/wsl/basic-commands
 
 ```bash
 # list distros and status
-wsl.exe -l -v
+wsl -l -v
 # terminate everything
-wsl.exe --shutdown
+wsl --shutdown
 # terminate a distro
-wsl.exe -t DistroName
+wsl -t DistroName
 ```
 
 ## Oh My Zsh
