@@ -6,9 +6,9 @@ See `Cheatsheet.md` for my custom setup tips and other notes.
 
 From https://gorails.com/setup/windows/10
 
-### Summary
+Copying essential commands over in case the link ever disappears from existence.
 
-Mise
+### Mise
 ```bash
 sudo apt update
 sudo apt install build-essential rustc libssl-dev libyaml-dev zlib1g-dev libgmp-dev
@@ -21,7 +21,7 @@ mise use --global node@22.13.0
 node -v
 ```
 
-Git:
+### Git
 ```bash
 git config --global color.ui true
 git config --global user.name "YOUR NAME"
@@ -32,12 +32,12 @@ cat ~/.ssh/id_ed25519.pub
 ssh -T git@github.com
 ```
 
-Rails: 
+### Rails 
 ```bash
 gem install rails -v 8.0.1
 ```
 
-Postgres:
+### Postgres
 ```bash
 sudo apt install postgresql libpq-dev
 sudo service postgresql start
@@ -46,7 +46,7 @@ sudo -u postgres psql
 postgres=# \\password chris
 ```
 
-## Node and React
+## Node
 
 ```bash
 sudo apt install nodejs
