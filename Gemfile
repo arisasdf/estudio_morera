@@ -64,3 +64,5 @@ end
 
 gem "graphql", "~> 2.4"
 gem "graphiql-rails", group: :development
+
+gem "shakapacker", "~> 8.1"

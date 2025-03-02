@@ -46,6 +46,14 @@ sudo -u postgres psql
 postgres=# \\password chris
 ```
 
+## Node and React
+
+```bash
+sudo apt install nodejs
+node -v
+npm -v
+```
+
 ## Setup
 
 ```bash
