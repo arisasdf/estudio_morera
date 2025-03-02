@@ -7,12 +7,14 @@
     "defaults"
   ],
   "dependencies": {
+    "@apollo/client": "^3.13.1",
     "@babel/core": "^7.26.9",
     "@babel/plugin-transform-runtime": "^7.26.9",
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3",
     "@babel/preset-typescript": "^7.26.0",
     "@babel/runtime": "^7.26.9",
+    "@graphql-codegen/cli": "^5.0.5",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "@types/babel__core": "^7.20.5",
     "@types/node": "^22.13.8",

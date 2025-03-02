@@ -3,4 +3,12 @@
 
 require_relative "config/application"
 
+require "graphql/rake_task"
+
+GraphQL::RakeTask.new(
+  schema_name: "EstudiomoreraSchema",
+  directory: "./app/javascript/graphql",
+  dependencies: [:environment]
+)
+
 Rails.application.load_tasks
