@@ -1,24 +1,60 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+See `Cheatsheet.md` for my custom setup tips and other notes.
 
-Things you may want to cover:
+## Mise, Ruby, and Rails
 
-* Ruby version
+From https://gorails.com/setup/windows/10
 
-* System dependencies
+### Summary
 
-* Configuration
+Mise
+```bash
+sudo apt update
+sudo apt install build-essential rustc libssl-dev libyaml-dev zlib1g-dev libgmp-dev
+curl https://mise.run | sh
+# follow on screen instructions
+mise use --global ruby@3
+ruby --version
+gem update --system
+mise use --global node@22.13.0
+node -v
+```
 
-* Database creation
+Git:
+```bash
+git config --global color.ui true
+git config --global user.name "YOUR NAME"
+git config --global user.email "YOUR@EMAIL.com"
+ssh-keygen -t ed25519 -C "YOUR@EMAIL.com"
+# use this to setup on github
+cat ~/.ssh/id_ed25519.pub
+ssh -T git@github.com
+```
 
-* Database initialization
+Rails: 
+```bash
+gem install rails -v 8.0.1
+```
 
-* How to run the test suite
+Postgres:
+```bash
+sudo apt install postgresql libpq-dev
+sudo service postgresql start
+sudo -u postgres createuser chris -s
+sudo -u postgres psql
+postgres=# \\password chris
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Setup
 
-* Deployment instructions
+```bash
+bundle install
+bundle exec rails db:create
+```
 
-* ...
+## Run
+
+```bash
+bundle exec rails server
+```
