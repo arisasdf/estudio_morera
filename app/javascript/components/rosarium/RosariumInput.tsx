@@ -30,49 +30,60 @@ const RosariumInput: React.FC<InputProps> = ({
 
   // Input and Submit
   onInput = () => {},
-  onSubmit = null,
+  onSubmit = () => {},
 
   // Other
   id = null,
 }) => {
   // Input and submit
-
   const onNativeInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
     onInput(e.target.value);
   };
 
   const onKeyUp = (e: React.KeyboardEvent<HTMLInputElement>): void => {
-    if (onSubmit && e.key === "Enter") {
+    if (e.key === "Enter") {
       onSubmit();
     }
   };
 
   // Label
-
   let outerLabel: JSX.Element = <></>;
   let innerLabel: JSX.Element = <></>;
   let finalPlaceholder: string = "";
 
   if (size === "large" && labelInside) {
-    innerLabel = <label htmlFor={id} className="rosarium-input-inner-label">{label}</label>;
+    innerLabel = (
+      <label htmlFor={id} className="rosarium-input-inner-label">
+        {label}
+      </label>
+    );
   } else {
-    outerLabel = <label htmlFor={id} className="rosarium-input-outer-label">{label}</label>;
+    outerLabel = (
+      <label htmlFor={id} className="rosarium-input-outer-label">
+        {label}
+      </label>
+    );
     finalPlaceholder = placeholder;
   }
 
+  // Common props
+  const inputProps: { id?: string } = {};
+  if (id) inputProps.id = id;
+
+  // Final render
   return (
     <div className={`rosarium-input--${size}`}>
       {outerLabel}
       <div className="rosarium-input-wrapper">
+        {innerLabel}
         <input
           onInput={onNativeInput}
           onKeyUp={onKeyUp}
           type={type}
           value={value}
           placeholder={finalPlaceholder}
-          id={id}
+          {...inputProps}
         ></input>
-        {innerLabel}
       </div>
     </div>
   );

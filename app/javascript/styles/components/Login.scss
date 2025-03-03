@@ -1,5 +1,7 @@
 @use "../rosarium";
 
+$footer-height: 30px;
+
 .login-page {
   @include rosarium.flex-col;
 
@@ -7,6 +9,7 @@
   align-items: center;
   padding-top: 20vh;
   gap: rosarium.$distance-xxl;
+  padding-bottom: $footer-height + 30px;
 
   .rosarium-card {
     @include rosarium.flex-col;
@@ -16,8 +19,7 @@
     .login-inputs {
       @include rosarium.flex-col;
       align-self: stretch;
-      // gap: rosarium.$distance-m;
-      gap: 60px;
+      gap: rosarium.$distance-m;
       margin: 40px 0 56px;
     }
 
@@ -32,7 +34,7 @@
   position: fixed;
   bottom: 0;
   width: 100vw;
-  height: 30px;
+  height: $footer-height;
   background-color: white;
   display: flex;
   justify-content: center;

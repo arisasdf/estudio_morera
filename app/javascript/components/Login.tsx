@@ -24,7 +24,7 @@ export const Login: React.FC = () => {
           <RosariumH1>Log In</RosariumH1>
           <div className="login-inputs">
             <RosariumInput id="login-email" label="Correo" size="large" placeholder="usuario" labelInside />
-            {/* <RosariumInput label="Contraseña" placeholder="contraseña" type="password" /> */}
+            <RosariumInput id="login-password" label="Contraseña" size="large" type="password" labelInside />
           </div>
           <div className="login-actions">
             <RosariumButton label="Login" variant={ButtonType.primary} />

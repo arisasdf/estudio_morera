@@ -16,6 +16,7 @@ a {
   color: colors.$tinctus-primary-600;
   text-decoration: underline;
   text-decoration-style: dotted;
+  cursor: pointer;
 
   &.rosarium-link-small {
     font-size: measures.$font-size-s;
