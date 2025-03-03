@@ -1,10 +1,11 @@
+/* Meyer's Reset */
 @forward "rosarium/reset";
 
-/* Variables */
-@forward "rosarium/typography";
+/* Variables and common styles */
 @forward "rosarium/measures";
 @forward "rosarium/colors";
+@forward "rosarium/typography";
 
 /* Components */
-@forward "rosarium/heading";
 @forward "rosarium/input";
+@forward "rosarium/card";

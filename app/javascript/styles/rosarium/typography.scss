@@ -1,5 +1,17 @@
+@use "measures";
+@use "colors";
+@use "sass:map";
+
 @import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   font-family: 'Gantari';
+  color: colors.$tinctus-gray-900;
+}
+
+@for $level from 1 through 4 {
+  .rosarium-h#{$level} {
+    color: colors.$tinctus-primary-600;
+    font-size: map.get(measures.$r-fontsize-headings, $level);
+  }
 }

@@ -4,8 +4,9 @@ interface HeadingProps extends PropsWithChildren<any> {
   level?: number;
 }
 
-// Note to self: I've chosen to call this a "heading" and not a "header"
-// because the default aria-role for h-tags is heading
+// Note to self: This is a "heading" and not a "header"
+// because a header is a layout tag :D
+
 export const RosariumHeading: React.FC<HeadingProps> = ({
   level = 1,
   children,
@@ -27,6 +28,10 @@ export const RosariumH2: React.FC<HeadingProps> = ({ children }) => {
 
 export const RosariumH3: React.FC<HeadingProps> = ({ children }) => {
   return <RosariumHeading level={3}>{children}</RosariumHeading>;
+};
+
+export const RosariumH4: React.FC<HeadingProps> = ({ children }) => {
+  return <RosariumHeading level={4}>{children}</RosariumHeading>;
 };
 
 export default RosariumHeading;

@@ -1,5 +1,28 @@
+$r-sizes: "xs", "s", "m", "l";
+
+$r-distance-xxs: 2px;
 $r-distance-xs: 4px;
 $r-distance-s: 8px;
-$r-distance-m: 12px;
-$r-distance-l: 16px;
-$r-distance-xl: 18px;
+$r-distance-m: 16px;
+$r-distance-l: 20px;
+$r-distance-xl: 24px;
+$r-distance-xxl: 28px;
+
+$r-fontsize-xs: 12px;
+$r-fontsize-s: 14px;
+$r-fontsize-m: 16px;
+$r-fontsize-l: 18px;
+$r-fontsize-xl: 20px;
+
+$r-fontsize-headings:
+  (
+    1: 40px,
+    2: 34px,
+    3: 28px,
+    4: 22px, /* kinda small */
+  );
+
+$r-radius-s: 4px;
+$r-radius-m: 6px;
+$r-radius-l: 8px;
+$r-radius-card: 20px;

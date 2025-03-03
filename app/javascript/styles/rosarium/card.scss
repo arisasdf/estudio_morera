@@ -1,0 +1,8 @@
+@use "colors";
+@use "measures";
+
+.rosarium-card {
+  background-color: colors.$tinctus-white;
+  padding: measures.$r-distance-xxl;
+  border-radius: measures.$r-radius-card;
+}

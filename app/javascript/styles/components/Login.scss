@@ -1,0 +1,21 @@
+@use "../rosarium/measures";
+
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .rosarium-card {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: measures.$r-distance-xl;
+
+    .rosarium-h1 {
+      text-align: center;
+    }
+  }
+}
