@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { RosariumH1 } from "./rosarium/RosariumHeading";
 import RosariumInput from "./rosarium/RosariumInput";
 import RosariumCard from "./rosarium/RosariumCard";
@@ -10,6 +10,12 @@ import RosariumLogoPlaceholder from "./rosarium/RosariumLogoPlaceholder";
 // }
 
 export const Login: React.FC = () => {
+  const [inputVal, setInputVal] = useState("");
+
+  // const onInput: void = (value) => {
+
+  // }
+
   return (
     <>
       <main className="login-page">
@@ -17,12 +23,12 @@ export const Login: React.FC = () => {
         <RosariumCard>
           <RosariumH1>Log In</RosariumH1>
           <div className="login-inputs">
-            <RosariumInput placeholder="usuario" />
-            <RosariumInput placeholder="contraseña" type="password" />
+            <RosariumInput id="login-email" label="Correo" size="large" placeholder="usuario" labelInside />
+            {/* <RosariumInput label="Contraseña" placeholder="contraseña" type="password" /> */}
           </div>
           <div className="login-actions">
             <RosariumButton label="Login" variant={ButtonType.primary} />
-            <RosariumButton label="Cancel" variant={ButtonType.secondary} />
+            {/* <RosariumButton label="Cancel" variant={ButtonType.secondary} /> */}
             <a className="rosarium-link-small">Recover Password</a>
           </div>
         </RosariumCard>

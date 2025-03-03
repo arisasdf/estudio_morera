@@ -16,7 +16,8 @@
     .login-inputs {
       @include rosarium.flex-col;
       align-self: stretch;
-      gap: rosarium.$distance-m;
+      // gap: rosarium.$distance-m;
+      gap: 60px;
       margin: 40px 0 56px;
     }
 
@@ -28,7 +29,7 @@
 }
 
 .login-footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100vw;
   height: 30px;

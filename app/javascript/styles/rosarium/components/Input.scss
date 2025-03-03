@@ -2,33 +2,39 @@
 @use "../colors.scss";
 
 @mixin rosarium-input(
-  $gap,
-  $label-font-size,
   $input-font-size,
+  $label-font-size,
+  $gap,
+  $height,
   $h-padding,
   $v-padding
 ) {
   display: flex;
   flex-direction: column;
 
-  label {
-    color: colors.$tinctus-gray-800;
+  .rosarium-input-outer-label {
+    color: colors.$tinctus-gray-700;
     font-size: $label-font-size;
-    padding: 0 0 0 $h-padding;
+    padding: 0 0 0 measures.$distance-s;
     margin-bottom: $gap;
   }
 
   input {
     font-size: $input-font-size;
-    border-color: colors.$tinctus-primary-300;
+    border-color: colors.$tinctus-primary-400;
     border-style: solid;
     font-size: $input-font-size;
     padding: $v-padding $h-padding;
-    border-width: 0 0 1px 0;
+    border-width: 1px;
+    border-radius: measures.$radius-l;
+    height: $height;
 
     &:focus {
       outline: none;
-      background-color: colors.$tinctus-primary-100;
+    }
+
+    &::placeholder {
+      color: colors.$tinctus-gray-600;
     }
 
     transition: colors.$input-bg-color-transition;
@@ -37,30 +43,62 @@
 
 .rosarium-input--small {
   @include rosarium-input(
-    $gap: measures.$distance-xs,
+    $input-font-size: measures.$font-size-s,
     $label-font-size: measures.$font-size-s,
-    $input-font-size: measures.$font-size-m,
-    $h-padding: measures.$distance-xxs,
+    $gap: measures.$distance-xs,
+    $height: measures.$font-size-s,
+    $h-padding: measures.$distance-s,
     $v-padding: measures.$distance-xs
   );
 }
 
 .rosarium-input--medium {
   @include rosarium-input(
-    $gap: measures.$distance-s,
-    $label-font-size: measures.$font-size-m,
     $input-font-size: measures.$font-size-l,
-    $h-padding: measures.$distance-xs,
+    $label-font-size: measures.$font-size-m,
+    $gap: measures.$distance-xs,
+    $height: measures.$font-size-l,
+    $h-padding: measures.$distance-m,
     $v-padding: measures.$distance-s
   );
 }
 
 .rosarium-input--large {
   @include rosarium-input(
-    $gap: measures.$distance-s,
-    $label-font-size: measures.$font-size-l,
     $input-font-size: measures.$font-size-xl,
-    $h-padding: measures.$distance-s,
+    $label-font-size: measures.$font-size-l,
+    $gap: measures.$distance-s,
+    $height: measures.$font-size-xl,
+    $h-padding: measures.$distance-m,
     $v-padding: measures.$distance-m
   );
+
+  .rosarium-input-wrapper {
+    position: relative;
+
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: measures.$font-size-xl;
+      margin: measures.$distance-m;
+      border-radius: measures.$radius-s;
+      font-size: measures.$font-size-xl;
+      color: colors.$tinctus-gray-600;
+      transition: all 0.3s ease;
+    }
+
+    input {
+      &:not(:placeholder-shown), &:focus {
+        & + label {
+          top: -18px;
+          margin: 0;
+          padding: measures.$distance-s;
+          font-size: measures.$font-size-l;
+          color: colors.$tinctus-gray-700;
+          background-color: colors.$tinctus-white;
+        }
+      }
+    }
+  }
 }
