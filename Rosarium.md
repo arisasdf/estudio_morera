@@ -81,16 +81,24 @@ Palettes generated with [Significa's palette generator](https://palette-generato
 ![Silva color palette](app/assets/images/rosarium/palette-silva.png)
 
 ```json
-[
-  "#000c00",
-  "#002b11",
-  "#004e2d",
-  "#0d734c", // Silva
-  "#4b9772",
-  "#7abc99",
-  "#a8e3c3",
-  "#d8ffee"
-]
+  silva: {
+    "25": "#f2f8f6",
+    "50": "#daece6",
+    "100": "#b8e0d3",
+    "200": "#88d3bb",
+    "300": "#3caa87",
+    "400": "#268265",
+    "500": "#136c50",
+    "600": "#015b45",
+    "700": "#014c3a",
+    "800": "#013c2d",
+    "900": "#012d22",
+  },
+```
+
+### Silva (updated)
+
+```json
 ```
 
 (blue: nox/mare/aequor/indicum, purple: viola/dircium/crepusculum)
