@@ -17,6 +17,7 @@ Palettes generated with [Significa's palette generator](https://palette-generato
 > 2 rose-garden<br/>
 > 3 rose-bed
 
+#### Old Palette
 ![Rosarium color palette](app/assets/images/rosarium/palette-rosarium.png)
 
 ```json
@@ -31,6 +32,11 @@ Palettes generated with [Significa's palette generator](https://palette-generato
   "#ffe4f2",
 ]
 ```
+
+#### New Palette
+Starting with:
+`500: "#b23464"`
+
 
 ### Silva
 
