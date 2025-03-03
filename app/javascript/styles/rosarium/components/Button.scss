@@ -1,2 +1,63 @@
-// rosarium-button--medium rosarium-button--primary
+@use "../colors.scss";
+@use "../measures.scss";
 
+@mixin rosarium-button-size($font-size, $h-padding, $v-padding) {
+  font-size: $font-size;
+  padding: $h-padding $v-padding;
+  border-radius: measures.$radius-m;
+}
+
+.rosarium-button--small {
+  @include rosarium-button-size(
+    $font-size: measures.$font-size-m,
+    $h-padding: measures.$distance-xs,
+    $v-padding: measures.$distance-s
+  );
+}
+
+.rosarium-button--medium {
+  @include rosarium-button-size(
+    $font-size: measures.$font-size-l,
+    $h-padding: measures.$distance-s,
+    $v-padding: measures.$distance-m
+  );
+}
+
+.rosarium-button--large {
+  @include rosarium-button-size(
+    $font-size: measures.$font-size-xl,
+    $h-padding: measures.$distance-m,
+    $v-padding: measures.$distance-l
+  );
+}
+
+$variants: "primary", "secondary";
+
+@each $variant in $variants {
+  .rosarium-button--#{$variant} {
+    border: none;
+    transition: colors.$button-bg-color-transition;
+    color: colors.$tinctus-white;
+    cursor: pointer;
+
+    @if $variant == "primary" {
+      background-color: colors.$tinctus-primary-600;
+
+      &:hover {
+        background-color: colors.$tinctus-primary-500;
+      }
+      &:active, &:focus {
+        background-color: colors.$tinctus-primary-800;
+      }
+    } @else if $variant == "secondary" {
+      background-color: colors.$tinctus-gray-400;
+
+      &:hover {
+        background-color: colors.$tinctus-gray-300;
+      }
+      &:active, &:focus {
+        background-color: colors.$tinctus-gray-600;
+      }
+    }
+  }
+}

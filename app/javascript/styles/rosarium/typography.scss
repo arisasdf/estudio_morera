@@ -1,8 +1,32 @@
 @use "colors.scss";
+@use "measures.scss";
 
 @import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
+html, body, div, span, p, button, label, input, a,
+h1, h2, h3, h4, h5, h6, blockquote, ol, ul, li,
+legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, footer, header, hgroup,
+menu, nav, output, ruby, section, summary {
   font-family: 'Gantari';
   color: colors.$tinctus-gray-900;
 }
+
+a {
+  color: colors.$tinctus-primary-600;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+
+  &.rosarium-link-small {
+    font-size: measures.$font-size-s;
+  }
+
+  &.rosarium-link-medium {
+    font-size: measures.$font-size-m;
+  }
+
+  &.rosarium-link-large {
+    font-size: measures.$font-size-l;
+  }
+}
+

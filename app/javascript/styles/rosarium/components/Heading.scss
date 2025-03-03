@@ -5,6 +5,6 @@
 @for $level from 1 through 4 {
   .rosarium-h#{$level} {
     color: colors.$tinctus-primary-600;
-    font-size: map.get(measures.$fontsize-headings, $level);
+    font-size: map.get(measures.$font-size-headings, $level);
   }
 }

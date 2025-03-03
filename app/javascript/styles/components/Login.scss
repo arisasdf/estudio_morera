@@ -4,26 +4,37 @@
   @include rosarium.flex-col;
 
   width: 100vw;
-  height: 100vh;
   align-items: center;
-  justify-content: center;
+  padding-top: 20vh;
+  gap: rosarium.$distance-xxl;
 
   .rosarium-card {
     @include rosarium.flex-col;
-
-    align-items: stretch;
-    gap: rosarium.$distance-xl;
+    align-items: center;
     width: 400px;
 
-    .rosarium-h1 {
-      text-align: center;
+    .login-inputs {
+      @include rosarium.flex-col;
+      align-self: stretch;
+      gap: rosarium.$distance-m;
+      margin: 40px 0 56px;
     }
 
-    .login-form {
+    .login-actions {
       @include rosarium.flex-col;
       gap: rosarium.$distance-m;
-
-      // align-items: center;
     }
   }
+}
+
+.login-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 30px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: rosarium.$font-size-xs;
 }

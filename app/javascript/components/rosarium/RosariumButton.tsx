@@ -7,7 +7,7 @@ export enum ButtonType {
 
 interface ButtonProps extends PropsWithChildren<any> {
   label: string;
-  size?: string;
+  size?: string; // TODO: also make this an enum, for everything
   variant?: ButtonType;
 }
 
