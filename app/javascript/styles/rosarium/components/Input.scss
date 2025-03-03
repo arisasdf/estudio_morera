@@ -1,0 +1,65 @@
+@use "../measures.scss";
+@use "../colors.scss";
+
+@mixin rosarium-input($gap, $label-font-size, $input-font-size, $borderadius: false, $h-padding, $v-padding) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+
+  label {
+    color: colors.$tinctus-gray-800;
+    font-size: $label-font-size;
+    padding: 0 0 0 $h-padding;
+  }
+
+  input {
+    font-size: $input-font-size;
+    border-color: colors.$tinctus-primary-300;
+    border-style: solid;
+    font-size: $input-font-size;
+    padding: $v-padding $h-padding;
+
+    @if $borderadius {
+      borderadius: $borderadius;
+      border-width: 1px;
+    } @else {
+      border-width: 0 0 1px 0;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: colors.$tinctus-primary-100;
+    }
+  }
+}
+
+
+.rosarium-input--small {
+  @include rosarium-input(
+    $gap: measures.$distance-xs,
+    $label-font-size: measures.$fontsize-s,
+    $input-font-size: measures.$fontsize-m,
+    $h-padding: measures.$distance-xxs,
+    $v-padding: measures.$distance-xs,
+  );
+}
+
+.rosarium-input--medium {
+  @include rosarium-input(
+    $gap: measures.$distance-s,
+    $label-font-size: measures.$fontsize-m,
+    $input-font-size: measures.$fontsize-l,
+    $h-padding: measures.$distance-xs,
+    $v-padding: measures.$distance-s,
+  );
+}
+
+.rosarium-input--large {
+  @include rosarium-input(
+    $gap: measures.$distance-s,
+    $label-font-size: measures.$fontsize-l,
+    $input-font-size: measures.$fontsize-xl,
+    $h-padding: measures.$distance-s,
+    $v-padding: measures.$distance-m,
+  );
+}

@@ -1,5 +1,5 @@
 /* Change to pick the palette */
-@forward "palettes/silva";
+@forward "palettes/silva.scss";
 
 // Monochrome
 $tinctus-black: #000000;
@@ -16,3 +16,6 @@ $tinctus-gray-600: #666666;
 $tinctus-gray-700: #4d4d4d;
 $tinctus-gray-800: #333333;
 $tinctus-gray-900: #1a1a1a;
+
+// Shadows
+$card-shadow: 2px 2px 4px 0px $tinctus-gray-100;

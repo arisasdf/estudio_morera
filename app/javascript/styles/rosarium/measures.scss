@@ -1,20 +1,18 @@
-$r-sizes: "xs", "s", "m", "l";
+$distance-xxs: 2px;
+$distance-xs: 4px;
+$distance-s: 8px;
+$distance-m: 16px;
+$distance-l: 20px;
+$distance-xl: 24px;
+$distance-xxl: 28px;
 
-$r-distance-xxs: 2px;
-$r-distance-xs: 4px;
-$r-distance-s: 8px;
-$r-distance-m: 16px;
-$r-distance-l: 20px;
-$r-distance-xl: 24px;
-$r-distance-xxl: 28px;
+$fontsize-xs: 12px;
+$fontsize-s: 14px;
+$fontsize-m: 16px;
+$fontsize-l: 18px;
+$fontsize-xl: 20px;
 
-$r-fontsize-xs: 12px;
-$r-fontsize-s: 14px;
-$r-fontsize-m: 16px;
-$r-fontsize-l: 18px;
-$r-fontsize-xl: 20px;
-
-$r-fontsize-headings:
+$fontsize-headings:
   (
     1: 40px,
     2: 34px,
@@ -22,7 +20,7 @@ $r-fontsize-headings:
     4: 22px, /* kinda small */
   );
 
-$r-radius-s: 4px;
-$r-radius-m: 6px;
-$r-radius-l: 8px;
-$r-radius-card: 20px;
+$radius-s: 4px;
+$radius-m: 6px;
+$radius-l: 8px;
+$radius-card: 20px;

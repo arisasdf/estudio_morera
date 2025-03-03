@@ -1,21 +1,29 @@
-@use "../rosarium/measures";
+@use "../rosarium";
 
 .login-page {
+  @include rosarium.flex-col;
+
   width: 100vw;
   height: 100vh;
-  display: flex;
   align-items: center;
   justify-content: center;
 
   .rosarium-card {
-    width: 400px;
-    display: flex;
-    flex-direction: column;
+    @include rosarium.flex-col;
+
     align-items: stretch;
-    gap: measures.$r-distance-xl;
+    gap: rosarium.$distance-xl;
+    width: 400px;
 
     .rosarium-h1 {
       text-align: center;
+    }
+
+    .login-form {
+      @include rosarium.flex-col;
+      gap: rosarium.$distance-m;
+
+      // align-items: center;
     }
   }
 }
