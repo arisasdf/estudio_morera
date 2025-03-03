@@ -17,7 +17,7 @@ Palettes generated with [Significa's palette generator](https://palette-generato
 > 2 rose-garden<br/>
 > 3 rose-bed
 
-#### Old Palette
+#### Old Palette (#b33458)
 ![Rosarium color palette](app/assets/images/rosarium/palette-rosarium.png)
 
 ```json
@@ -25,7 +25,7 @@ Palettes generated with [Significa's palette generator](https://palette-generato
   "#2a0003",
   "#55001b",
   "#831138",
-  "#b33458", // Rosarium
+  "#b33458",
   "#d8637e",
   "#fc90a6",
   "#ffbecf",
@@ -33,10 +33,23 @@ Palettes generated with [Significa's palette generator](https://palette-generato
 ]
 ```
 
-#### New Palette
-Starting with:
-`500: "#b23464"`
+#### New Palette (#a6305d)
 
+```json
+  rosarium: {
+    25: "#fbf4f8",
+    50: "#f9eaf2",
+    100: "#f1c6dd",
+    200: "#e9a5c8",
+    300: "#e185b2",
+    400: "#c4457a",
+    500: "#a6305d",
+    600: "#892b4e",
+    700: "#6e213e",
+    800: "#5b1a31",
+    900: "#451224",
+  },
+```
 
 ### Silva
 
