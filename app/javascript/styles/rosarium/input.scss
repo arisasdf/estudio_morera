@@ -1,0 +1,7 @@
+@use 'measures';
+
+.rosarium-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: measures.$r-distance-xl;
+}

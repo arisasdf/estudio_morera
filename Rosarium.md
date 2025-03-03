@@ -1,12 +1,5 @@
 # Rosarium
 
-> **rŏsārĭum**  
-> _neutral noun II declension_  
->
-> 1 rosary  
-> 2 rose-garden  
-> 3 rose-bed
-
 I'm a whimsy little girl so I've chosen to create a "design system" and Gemini helped me give it a very cringey gothy name. It's just a handful of components and styles that I want to keep unified but I'll just go with it.
 
 Here's a smattering of notes but hopefully I can make a Storybook eventually.
@@ -17,7 +10,14 @@ Palettes generated with [Significa's palette generator](https://palette-generato
 
 ### Rosarium
 
-![rosarium palette](app/assets/images/rosarium/palette-rosarium.png)
+> **rŏsārĭum**<br/>
+> _neutral noun II declension_
+>
+> 1 rosary<br/>
+> 2 rose-garden<br/>
+> 3 rose-bed
+
+![Rosarium color palette](app/assets/images/rosarium/palette-rosarium.png)
 
 ```json
 [
@@ -32,22 +32,33 @@ Palettes generated with [Significa's palette generator](https://palette-generato
 ]
 ```
 
-### Emerald
+### Silva
 
-![emerald palette](app/assets/images/rosarium/palette-emerald.png)
+> **silva**<br/>
+> _feminine noun I declension_
+>
+> 1 wood, forest<br/>
+> 2 (poetic) branches, bushes, shrubbery, bush<br/>
+> 3 (in the plural) trees, plants
+
+![Silva color palette](app/assets/images/rosarium/palette-silva.png)
 
 ```json
 [
   "#000c00",
   "#002b11",
   "#004e2d",
-  "#0d734c", // Emerald
+  "#0d734c", // Silva
   "#4b9772",
   "#7abc99",
   "#a8e3c3",
   "#d8ffee"
 ]
 ```
+
+(blue: nox/mare/aequor/indicum, purple: viola/dircium/crepusculum)
+
+night, sea, surface of the sea, indigo / violet, nightshade, twilight
 
 ### Grayscale
 

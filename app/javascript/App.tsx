@@ -1,11 +1,10 @@
 import React from "react";
 import { withProvider } from "./graphqlProvider";
-// import Works from "./components/Naive";
+import Login from "./components/Login";
 
-const Application: React.FunctionComponent = () => {
-  return <main>
-    <h1>Welcome traveler</h1>
-  </main>;
+
+const Application: React.FC = () => {
+  return <Login /> ;
 };
 
 export default withProvider(Application);

@@ -1,0 +1,15 @@
+@use "colors";
+
+@mixin rosariumHeading($level) {
+  .rosarium-h#{$level} {
+    color: colors.$tinctus-primary-500;
+  }
+}
+
+// @include rosariumHeading(1);
+// @include rosariumHeading(2);
+// @include rosariumHeading(3);
+
+.rosarium-h1 {
+  color: colors.$tinctus-primary-500;
+}
