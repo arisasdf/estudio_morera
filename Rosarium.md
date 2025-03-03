@@ -8,7 +8,7 @@ Here's a smattering of notes but hopefully I can make a Storybook eventually.
 
 Palettes generated with [Significa's palette generator](https://palette-generator.significa.co/?c=0D734C&s=10&cs=0.1&cm=0)
 
-### Rosarium
+### Rosarium (DEPRECATED)
 
 > **rŏsārĭum**<br/>
 > _neutral noun II declension_
@@ -17,7 +17,8 @@ Palettes generated with [Significa's palette generator](https://palette-generato
 > 2 rose-garden<br/>
 > 3 rose-bed
 
-#### Old Palette (#b33458)
+`Rosarium - #b33458`
+
 ![Rosarium color palette](app/assets/images/rosarium/palette-rosarium.png)
 
 ```json
@@ -33,25 +34,42 @@ Palettes generated with [Significa's palette generator](https://palette-generato
 ]
 ```
 
-#### New Palette (#a6305d)
+### Rosula (#a6305d)
 
 ```json
-  rosarium: {
-    25: "#fbf4f8",
-    50: "#f9eaf2",
-    100: "#f1c6dd",
-    200: "#e9a5c8",
-    300: "#e185b2",
-    400: "#c4457a",
-    500: "#a6305d",
-    600: "#892b4e",
-    700: "#6e213e",
-    800: "#5b1a31",
-    900: "#451224",
+  "rosula": {
+    "25": "#fbf4f8",
+    "50": "#f9eaf2",
+    "100": "#f1c6dd",
+    "200": "#e9a5c8",
+    "300": "#e185b2",
+    "400": "#c4457a",
+    "500": "#a6305d",
+    "600": "#892b4e",
+    "700": "#6e213e",
+    "800": "#5b1a31",
+    "900": "#451224",
+  },
+```
+### Sanguis (#862d36)
+
+```json
+  "sanguis": {
+    "25": "#fdf7f7",
+    "50": "#f6eaeb",
+    "100": "#e8d4d6",
+    "200": "#d8b6ba",
+    "300": "#c4878d",
+    "400": "#aa414b",
+    "500": "#862d36",
+    "600": "#75242c",
+    "700": "#621d24",
+    "800": "#50161c",
+    "900": "#3f1217",
   },
 ```
 
-### Silva
+### Silva (DEPRECATED)
 
 > **silva**<br/>
 > _feminine noun I declension_
