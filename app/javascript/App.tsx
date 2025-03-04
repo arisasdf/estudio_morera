@@ -1,6 +1,6 @@
 import React from "react";
 import { withProvider } from "./graphqlProvider";
-import Login from "./components/Login";
+import Login from "@components/Login";
 
 
 const Application: React.FC = () => {

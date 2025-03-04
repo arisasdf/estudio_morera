@@ -56,6 +56,9 @@ See https://www.howtographql.com/graphql-ruby/1-getting-started/
 
 I'm an experienced Rails fullstack dev, but I'm entirely new to GraphQL, so this is my learning notepad. We all start somewhere!
 
+https://egghead.io/blog/rails-graphql-typescript-react-apollo
+https://github.com/dotansimha/graphql-code-generator
+
 ---
 
 Scaffolding a `model` and then a `graphql:object` will autogenerate the GraphQL type fields.

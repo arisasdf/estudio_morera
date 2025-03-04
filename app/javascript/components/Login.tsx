@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { RosariumH1 } from "./rosarium/RosariumHeading";
-import RosariumInput from "./rosarium/RosariumInput";
-import RosariumCard from "./rosarium/RosariumCard";
-import RosariumButton, { ButtonType } from "./rosarium/RosariumButton";
-import RosariumLogoPlaceholder from "./rosarium/RosariumLogoPlaceholder";
+import { RosariumH1 } from "@rosarium/RosariumHeading";
+import RosariumInput from "@rosarium/RosariumInput";
+import RosariumCard from "@rosarium/RosariumCard";
+import RosariumButton, { ButtonType } from "@rosarium/RosariumButton";
+import RosariumLogoPlaceholder from "@rosarium/RosariumLogoPlaceholder";
 
 // interface LoginProps extends PropsWithChildren<any> {
 //   level?: number;
@@ -28,7 +28,6 @@ export const Login: React.FC = () => {
           </div>
           <div className="login-actions">
             <RosariumButton label="Login" variant={ButtonType.primary} />
-            {/* <RosariumButton label="Cancel" variant={ButtonType.secondary} /> */}
             <a className="rosarium-link-small">Recover Password</a>
           </div>
         </RosariumCard>
