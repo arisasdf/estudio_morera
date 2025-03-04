@@ -2,7 +2,7 @@
 @use "../measures.scss";
 
 .rosarium-card {
-  background-color: colors.$tinctus-white;
+  background-color: var(--tinctus-white);
   padding: measures.$distance-xxl;
   border-radius: measures.$radius-card;
   box-shadow: colors.$card-shadow;

@@ -8,9 +8,9 @@ import React, { JSX, PropsWithChildren } from "react";
 interface InputProps extends PropsWithChildren<any> {
   label: string;
   labelInside?: boolean;
-  size?: string;
+  size?: "small" | "medium" | "large";
   placeholder?: string;
-  type?: string;
+  type?: "text" | "password";
   value?: string;
   onInput?: (arg0: string) => void;
   onSubmit?: () => void;

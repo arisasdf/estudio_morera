@@ -1,5 +1,3 @@
-@use "rosarium/colors.scss";
-
 body {
-  background-color: colors.$tinctus-gray-50;
+  background-color: var(--tinctus-gray-50);
 }

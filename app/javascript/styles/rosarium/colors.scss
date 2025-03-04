@@ -1,24 +1,41 @@
-/* Change to pick the palette */
-@forward "palettes/silva.scss";
+@use "palettes.scss";
+@use "sass:map";
 
-// Monochrome
-$tinctus-black: #000000;
-$tinctus-white: #ffffff;
+// Themes
 
-// Grayscale
-$tinctus-gray-50: #f0f0f0;
-$tinctus-gray-100: #e6e6e6;
-$tinctus-gray-200: #cccccc;
-$tinctus-gray-300: #b3b3b3;
-$tinctus-gray-400: #999999;
-$tinctus-gray-500: #808080;
-$tinctus-gray-600: #666666;
-$tinctus-gray-700: #4d4d4d;
-$tinctus-gray-800: #333333;
-$tinctus-gray-900: #1a1a1a;
+@mixin themable($theme-name, $theme-map) {
+  .rosarium-theme--#{$theme-name} {
+
+    @each $shade, $hex in $theme-map {
+      --tinctus-primary-#{$shade}: #{$hex};
+    }
+  }
+}
+
+@include themable("rosula", palettes.$rosula);
+@include themable("sanguis", palettes.$sanguis);
+@include themable("silva", palettes.$silva);
+
+:root {
+  // Monochrome
+  --tinctus-black: #000000;
+  --tinctus-white: #ffffff;
+
+  // Grayscale
+  --tinctus-gray-50: #f0f0f0;
+  --tinctus-gray-100: #e6e6e6;
+  --tinctus-gray-200: #cccccc;
+  --tinctus-gray-300: #b3b3b3;
+  --tinctus-gray-400: #999999;
+  --tinctus-gray-500: #808080;
+  --tinctus-gray-600: #666666;
+  --tinctus-gray-700: #4d4d4d;
+  --tinctus-gray-800: #333333;
+  --tinctus-gray-900: #1a1a1a;
+}
 
 // Shadows
-$card-shadow: 2px 2px 4px 0px $tinctus-gray-100;
+$card-shadow: 2px 2px 4px 0px --tinctus-gray-100;
 
 // Transitions
 $button-bg-color-transition: background-color 0.1s ease;

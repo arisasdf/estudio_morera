@@ -37,26 +37,26 @@ $variants: "primary", "secondary";
   .rosarium-button--#{$variant} {
     border: none;
     transition: colors.$button-bg-color-transition;
-    color: colors.$tinctus-white;
+    color: var(--tinctus-white);
     cursor: pointer;
 
     @if $variant == "primary" {
-      background-color: colors.$tinctus-primary-600;
+      background-color: var(--tinctus-primary-600);
 
       &:hover {
-        background-color: colors.$tinctus-primary-500;
+        background-color: var(--tinctus-primary-500);
       }
       &:active, &:focus {
-        background-color: colors.$tinctus-primary-800;
+        background-color: var(--tinctus-primary-800);
       }
     } @else if $variant == "secondary" {
-      background-color: colors.$tinctus-gray-400;
+      background-color: var(--tinctus-gray-400);
 
       &:hover {
-        background-color: colors.$tinctus-gray-300;
+        background-color: var(--tinctus-gray-300);
       }
       &:active, &:focus {
-        background-color: colors.$tinctus-gray-600;
+        background-color: var(--tinctus-gray-600);
       }
     }
   }

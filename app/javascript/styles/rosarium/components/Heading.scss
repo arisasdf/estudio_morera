@@ -1,10 +1,9 @@
 @use "../measures.scss";
-@use "../colors.scss";
 @use "sass:map";
 
 @for $level from 1 through 4 {
   .rosarium-h#{$level} {
-    color: colors.$tinctus-primary-600;
+    color: var(--tinctus-primary-600);
     font-size: map.get(measures.$font-size-headings, $level);
   }
 }

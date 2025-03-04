@@ -1,4 +1,3 @@
-@use "colors.scss";
 @use "measures.scss";
 
 @import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&display=swap');
@@ -9,11 +8,11 @@ legend, table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, footer, header, hgroup,
 menu, nav, output, ruby, section, summary {
   font-family: 'Gantari';
-  color: colors.$tinctus-gray-900;
+  color: var(--tinctus-gray-900);
 }
 
 a {
-  color: colors.$tinctus-primary-600;
+  color: var(--tinctus-primary-600);
   text-decoration: underline;
   text-decoration-style: dotted;
   cursor: pointer;

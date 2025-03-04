@@ -1,4 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
+import path from "path";
+import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
 
 const config: StorybookConfig = {
   stories: [
@@ -19,7 +21,6 @@ const config: StorybookConfig = {
   },
 
   webpackFinal: async (config, { configType}) => {
-
     config.module?.rules?.push({
         test: /\.s[ac]ss$/i,
         use: [
@@ -31,6 +32,15 @@ const config: StorybookConfig = {
           }
         ]
     })
+
+    config.resolve ||= {};
+
+    config.resolve.plugins = [
+      ...config.resolve.plugins || [],
+      new TsconfigPathsPlugin({
+        configFile: path.resolve(__dirname, "../tsconfig.json"),
+      })
+    ];
 
    return config;
   },
