@@ -1,24 +1,5 @@
-# Rosarium
-
-> **rŏsārĭum**<br/>
-> _neutral noun II declension_
->
-> 1 rosary<br/>
-> 2 rose-garden<br/>
-> 3 rose-bed
-
-I'm a whimsy little girl so I've chosen to create a "design system" and Gemini helped me give it a very cringey gothy name. It's just a handful of components and styles that I want to keep unified but I'll just go with it.
-
-Here's a smattering of notes but hopefully I can make a Storybook eventually.
-
-## Palettes
-
-Palettes generated with [Significa's palette generator](https://palette-generator.significa.co/?c=0D734C&s=10&cs=0.1&cm=0)
-
-### Rosula (#a6305d)
-
-```json
-  "rosula": {
+const PALETTES = {
+  rosula: {
     "25": "#fbf4f8",
     "50": "#f9eaf2",
     "100": "#f1c6dd",
@@ -31,12 +12,7 @@ Palettes generated with [Significa's palette generator](https://palette-generato
     "800": "#5b1a31",
     "900": "#451224",
   },
-```
-
-### Sanguis (#862d36)
-
-```json
-  "sanguis": {
+  sanguis: {
     "25": "#fdf7f7",
     "50": "#f6eaeb",
     "100": "#e8d4d6",
@@ -49,12 +25,7 @@ Palettes generated with [Significa's palette generator](https://palette-generato
     "800": "#50161c",
     "900": "#3f1217",
   },
-```
-
-### Silva (#136c50)
-
-```json
-  "silva": {
+  silva: {
     "25": "#f2f8f6",
     "50": "#daece6",
     "100": "#b8e0d3",
@@ -67,14 +38,7 @@ Palettes generated with [Significa's palette generator](https://palette-generato
     "800": "#013c2d",
     "900": "#012d22",
   },
-```
-
-### Grayscale
-
-10% lightness step
-
-```json
-  "grayscale": {
+  grayscale: {
     "25": "#ffffff",
     "50": "#e6e6e6",
     "100": "#cccccc",
@@ -87,11 +51,6 @@ Palettes generated with [Significa's palette generator](https://palette-generato
     "800": "#1a1a1a",
     "900": "#000000",
   },
-```
+};
 
-
-More ideas:
-
-Blue: nox (night), mare (sea), aequor (surface of the sea), indicum (indigo)
-
-Purple: viola (violet), dircium (nightshade), crepusculum (twilight)
+export default PALETTES;

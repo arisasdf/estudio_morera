@@ -1,23 +1,21 @@
 import React, { PropsWithChildren } from "react";
 
-export enum ButtonType {
-  "primary",
-  "secondary",
-}
+type ButtonSize = "small" | "medium" | "large";
+type ButtonVariant = "primary" | "secondary";
 
 interface ButtonProps extends PropsWithChildren<any> {
   label: string;
-  size?: string; // TODO: also make this an enum, for everything
-  variant?: ButtonType;
+  size?: ButtonSize;
+  variant?: ButtonVariant;
 }
 
 const RosariumButton: React.FC<ButtonProps> = ({
   label,
   size = "medium",
-  variant = ButtonType.secondary,
+  variant = "secondary",
 }) => {
   return (
-    <button className={`rosarium-button--${size} rosarium-button--${ButtonType[variant]}`}>
+    <button className={`rosarium-button--${size} rosarium-button--${variant}`}>
       {label}
     </button>
   );

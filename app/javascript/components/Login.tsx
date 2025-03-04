@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { RosariumH1 } from "@rosarium/RosariumHeading";
 import RosariumInput from "@rosarium/RosariumInput";
 import RosariumCard from "@rosarium/RosariumCard";
-import RosariumButton, { ButtonType } from "@rosarium/RosariumButton";
+import RosariumButton from "@rosarium/RosariumButton";
 import RosariumLogoPlaceholder from "@rosarium/RosariumLogoPlaceholder";
 
 // interface LoginProps extends PropsWithChildren<any> {
@@ -27,7 +27,7 @@ export const Login: React.FC = () => {
             <RosariumInput id="login-password" label="Contraseña" size="large" type="password" labelInside />
           </div>
           <div className="login-actions">
-            <RosariumButton label="Login" variant={ButtonType.primary} />
+            <RosariumButton label="Login" variant={"primary"} />
             <a className="rosarium-link-small">Recover Password</a>
           </div>
         </RosariumCard>
