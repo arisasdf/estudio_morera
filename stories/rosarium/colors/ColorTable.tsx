@@ -6,7 +6,7 @@ import { upperCase } from "lodash";
 
 const ColorTable: React.FC<PropsWithChildren> = () => {
   const colorTableCss = `
-  table td p { font-size: 12px; color: inherit !important;}
+  table td p { font-size: 12px; }
 `;
 
   return (

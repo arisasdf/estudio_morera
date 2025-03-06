@@ -44,9 +44,8 @@ const rgbToHsl = (r: number, g: number, b: number): number[] => {
 
 const contrastingColor = (
   hex: string,
-  factorAlpha: boolean = false
+  r0: number, g0: number, b0: number
 ): string => {
-  // debugger
   let [r, g, b, a] = hex
     .replace(
       /^#?(?:(?:(..)(..)(..)(..)?)|(?:(.)(.)(.)(.)?))$/,
@@ -54,10 +53,10 @@ const contrastingColor = (
     )
     .match(/(..)/g)
     .map((rgb) => parseInt("0x" + rgb));
-  return (~~(r * 299) + ~~(g * 587) + ~~(b * 114)) / 1000 >= 128 ||
-    (!!(~(128 / a) + 1) && factorAlpha)
+    // debugger
+  return (((~~(r * 299) + ~~(g * 587) + ~~(b * 114)) / 1000) >= 128)
     ? "#34373b"
-    : "#fff";
+    : "#ffffff";
 };
 
 // ColorRow component
@@ -70,33 +69,37 @@ interface ColorRowProps extends PropsWithChildren<any> {
 
 const ColorRow: React.FC<ColorRowProps> = ({ name, hex }) => {
   const rgb = hexToRgb(hex);
+  const hsl = rgbToHsl(rgb[0], rgb[1], rgb[2]);
+
+  const pStyle: any = {
+    color: contrastingColor(hex, rgb[0], rgb[1], rgb[2]),
+  };
+
   const rgbInner = (
     <>
-      <p>R: {rgb[0]}</p>
-      <p>G: {rgb[1]}</p>
-      <p>B: {rgb[2]}</p>
+      <p style={pStyle}>R: {rgb[0]}</p>
+      <p style={pStyle}>G: {rgb[1]}</p>
+      <p style={pStyle}>B: {rgb[2]}</p>
     </>
   );
 
-  const hsl = rgbToHsl(rgb[1], rgb[2], rgb[3]);
   const hslInner = (
     <>
-      <p>H: {Math.round(hsl[0] * 360)}</p>
-      <p>S: {Math.round(hsl[1] * 100)}%</p>
-      <p>L: {Math.round(hsl[2] * 100)}%</p>
+      <p style={pStyle}>H: {Math.round(hsl[0] * 360)}</p>
+      <p style={pStyle}>S: {Math.round(hsl[1] * 100)}%</p>
+      <p style={pStyle}>L: {Math.round(hsl[2] * 100)}%</p>
     </>
   );
 
   const nameInner = (
     <>
-      <p>{name}</p>
-      <p>{hex}</p>
+      <p style={pStyle}>{name}</p>
+      <p style={pStyle}>{hex}</p>
     </>
   );
 
   const trStyle: any = {
-    backgroundColor: hex,
-    color: contrastingColor(hex),
+    backgroundColor: hex
   };
 
   if (name == "500") {
