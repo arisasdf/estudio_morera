@@ -2,7 +2,6 @@
 @use "sass:map";
 
 // Themes
-
 @mixin themable($theme-name, $theme-map) {
   .rosarium-theme--#{$theme-name} {
 
