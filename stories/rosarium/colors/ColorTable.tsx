@@ -18,6 +18,7 @@ const ColorTable: React.FC<PropsWithChildren> = () => {
               textAlign: "center",
               fontSize: "22px",
               marginBottom: "15px",
+              color: PALETTES[paletteName]["500"],
             }}
           >
             {upperCase(paletteName)}

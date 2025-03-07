@@ -3,7 +3,7 @@ import RosariumButton from "@rosarium/RosariumButton";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Rosarium/Button',
+  title: 'Components/Button',
   component: RosariumButton,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
