@@ -15,6 +15,7 @@
     "paths": {
       "@rosarium/*": ["app/javascript/components/rosarium/*"],
       "@components/*": ["app/javascript/components/*"],
+      // "@i18n": ["app/javascript/i18n/i18n"],
     }
   },
   "exclude": ["**/*.spec.ts", "node_modules", "vendor", "public"],

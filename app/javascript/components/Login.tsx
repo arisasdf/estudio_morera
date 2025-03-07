@@ -4,10 +4,7 @@ import RosariumInput from "@rosarium/RosariumInput";
 import RosariumCard from "@rosarium/RosariumCard";
 import RosariumButton from "@rosarium/RosariumButton";
 import RosariumLogoPlaceholder from "@rosarium/RosariumLogoPlaceholder";
-
-// interface LoginProps extends PropsWithChildren<any> {
-//   level?: number;
-// }
+import I18N from "../i18n/i18n";
 
 export const Login: React.FC = () => {
   const [inputVal, setInputVal] = useState("");
@@ -17,26 +14,60 @@ export const Login: React.FC = () => {
 
   // }
 
-
   return (
     <>
       <main className="login-page">
         <RosariumLogoPlaceholder />
         <RosariumCard>
-          <RosariumH1>Log In</RosariumH1>
+          <RosariumH1>{I18N("login_heading")}</RosariumH1>
           <div className="login-inputs">
-            <RosariumInput id="login-email" label="Correo" size="large" placeholder="usuario" labelInside />
-            { !showRecover && <RosariumInput id="login-password" label="Contraseña" size="large" type="password" labelInside />}
+            <RosariumInput
+              id="login-email"
+              label={I18N("login_email")}
+              size="large"
+              labelInside
+            />
+            {!showRecover && (
+              <RosariumInput
+                id="login-password"
+                label={I18N("login_password")}
+                size="large"
+                labelInside
+              />
+            )}
           </div>
           <div className="login-actions">
-            <RosariumButton label={ showRecover ? "Recover Password" : "Login"} variant="primary" />
-          { showRecover && <RosariumButton label="Back" onClick={() => { setRecover(false) }} variant="secondary" /> }
-            { !showRecover && <a className="rosarium-link-small" onClick={() => { setRecover(true) }}>Recover Password</a>}
+            <RosariumButton
+              label={showRecover ? I18N("login_recover") : I18N("login_cta")}
+              variant="primary"
+            />
+            {showRecover && (
+              <RosariumButton
+                label={I18N("back")}
+                onClick={() => {
+                  setRecover(false);
+                }}
+                variant="secondary"
+              />
+            )}
+            {!showRecover && (
+              <a
+                className="rosarium-link-small"
+                onClick={() => {
+                  setRecover(true);
+                }}
+              >
+                {I18N("login_recover")}
+              </a>
+            )}
           </div>
         </RosariumCard>
       </main>
       <footer className="login-footer">
-        <span>Designed and coded by <a href="https://lucia.cr">Lucía S</a> &ndash; &copy; Estudio Morera 2025</span>
+        <span>
+          <a href="https://lucia.cr">Lucía S</a> &ndash; Estudio Morera &copy;
+          2025
+        </span>
       </footer>
     </>
   );
