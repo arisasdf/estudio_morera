@@ -31,7 +31,7 @@ export const SmallSecondary: Story = {
     variant: "secondary",
     label: "Cancel",
     size: "small"
-  }
+  },
 };
 
 export const BigPrimary: Story = {
@@ -41,3 +41,6 @@ export const BigPrimary: Story = {
     size: "large"
   }
 };
+
+// TODO: stories with "children"
+// e.g. once we have icons, add icons inside buttons

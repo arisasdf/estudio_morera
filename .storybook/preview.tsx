@@ -30,7 +30,7 @@ const preview: Preview = {
     },
   },
   decorators: [ // TODO: add class rosarium-page-backround para que sea el color que yo quiero con el tema
-    (Story, context) => (<div className={`rosarium-theme--${context.globals.theme}`}><Story /></div>)
+    (Story, context) => (<div className={`rosarium-theme--${context.globals.theme} rosarium-container`}><Story /></div>)
   ],
 };
 

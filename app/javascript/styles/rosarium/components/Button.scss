@@ -46,7 +46,7 @@ $variants: "primary", "secondary";
       &:hover {
         background-color: var(--tinctus-primary-500);
       }
-      &:active, &:focus {
+      &:active {
         background-color: var(--tinctus-primary-800);
       }
     } @else if $variant == "secondary" {
@@ -55,7 +55,7 @@ $variants: "primary", "secondary";
       &:hover {
         background-color: var(--tinctus-gray-300);
       }
-      &:active, &:focus {
+      &:active {
         background-color: var(--tinctus-gray-600);
       }
     }

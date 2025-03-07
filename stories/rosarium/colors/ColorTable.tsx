@@ -1,5 +1,4 @@
-import React from "react";
-import { PropsWithChildren } from "react";
+import React,  { PropsWithChildren } from "react";
 import ColorRow from "./ColorRow";
 import PALETTES from "./palettes";
 import { upperCase } from "lodash";
