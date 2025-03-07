@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   post "uploads/upload"
   get "uploads/download"
   get "uploads/index"
-  get "site/index"
+  get "/", to: "spa#index"
   if Rails.env.development?
     mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
   end

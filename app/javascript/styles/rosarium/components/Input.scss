@@ -94,10 +94,12 @@
 
       &:has(+ input:not(:placeholder-shown)),
       &:has(+ input:focus) {
-        top: -18px;
+        top: -10px;
+        left: 8px;
         margin: 0;
-        padding: measures.$distance-s;
+        padding: measures.$distance-xxs measures.$distance-xs;
         font-size: measures.$font-size-l;
+        height: 1.2em;
         color: var(--tinctus-gray-700);
         background-color: var(--tinctus-white);
       }

@@ -7,16 +7,18 @@ interface ButtonProps extends PropsWithChildren<any> {
   label?: string;
   size?: ButtonSize;
   variant?: ButtonVariant;
+  onClick?: () => void;
 }
 
 const RosariumButton: React.FC<ButtonProps> = ({
   label = null,
   size = "medium",
   variant = "secondary",
+  onClick = () => {},
   children
 }) => {
   return (
-    <button className={`rosarium-button--${size} rosarium-button--${variant}`}>
+    <button className={`rosarium-button--${size} rosarium-button--${variant}`} onClick={onClick}>
       {children || label}
     </button>
   );

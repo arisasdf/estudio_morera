@@ -11,10 +11,12 @@ import RosariumLogoPlaceholder from "@rosarium/RosariumLogoPlaceholder";
 
 export const Login: React.FC = () => {
   const [inputVal, setInputVal] = useState("");
+  const [showRecover, setRecover] = useState(false);
 
   // const onInput: void = (value) => {
 
   // }
+
 
   return (
     <>
@@ -24,11 +26,12 @@ export const Login: React.FC = () => {
           <RosariumH1>Log In</RosariumH1>
           <div className="login-inputs">
             <RosariumInput id="login-email" label="Correo" size="large" placeholder="usuario" labelInside />
-            <RosariumInput id="login-password" label="Contraseña" size="large" type="password" labelInside />
+            { !showRecover && <RosariumInput id="login-password" label="Contraseña" size="large" type="password" labelInside />}
           </div>
           <div className="login-actions">
-            <RosariumButton label="Login" variant={"primary"} />
-            <a className="rosarium-link-small">Recover Password</a>
+            <RosariumButton label={ showRecover ? "Recover Password" : "Login"} variant="primary" />
+          { showRecover && <RosariumButton label="Back" onClick={() => { setRecover(false) }} variant="secondary" /> }
+            { !showRecover && <a className="rosarium-link-small" onClick={() => { setRecover(true) }}>Recover Password</a>}
           </div>
         </RosariumCard>
       </main>
