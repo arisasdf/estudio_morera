@@ -1,12 +1,14 @@
 export default {
-  hello_world: "Hola mundo!",
+  hello_world: "Hello world!",
   // Generic
   back: "Back",
 
   // Login page
-  login_heading: "Log In",
-  login_email: "Email",
-  login_password: "Password",
-  login_cta: "Log in",
-  login_recover: "Recover Password",
+  login: {
+    heading: "Log In",
+    email: "Email",
+    password: "Password",
+    cta: "Log in",
+    recover: "Recover Password",
+  }
 }

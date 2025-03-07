@@ -19,18 +19,18 @@ export const Login: React.FC = () => {
       <main className="login-page">
         <RosariumLogoPlaceholder />
         <RosariumCard>
-          <RosariumH1>{I18N("login_heading")}</RosariumH1>
+          <RosariumH1>{I18N("login.heading")}</RosariumH1>
           <div className="login-inputs">
             <RosariumInput
               id="login-email"
-              label={I18N("login_email")}
+              label={I18N("login.email")}
               size="large"
               labelInside
             />
             {!showRecover && (
               <RosariumInput
                 id="login-password"
-                label={I18N("login_password")}
+                label={I18N("login.password")}
                 size="large"
                 labelInside
               />
@@ -38,7 +38,7 @@ export const Login: React.FC = () => {
           </div>
           <div className="login-actions">
             <RosariumButton
-              label={showRecover ? I18N("login_recover") : I18N("login_cta")}
+              label={showRecover ? I18N("login.recover") : I18N("login.cta")}
               variant="primary"
             />
             {showRecover && (
@@ -57,7 +57,7 @@ export const Login: React.FC = () => {
                   setRecover(true);
                 }}
               >
-                {I18N("login_recover")}
+                {I18N("login.recover")}
               </a>
             )}
           </div>
