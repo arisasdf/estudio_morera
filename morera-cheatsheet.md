@@ -37,7 +37,7 @@ wsl --shutdown
 wsl -t DistroName
 ```
 
-## Oh My Zsh
+### Oh My Zsh
 My fav theme is `avit`
 
 ```bash
@@ -45,21 +45,28 @@ sudo apt install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-## howtographql tutorial
+## GraphQL
+
+I'm an experienced Rails fullstack dev, but I'm entirely new to GraphQL, so this is my learning notepad. We all start somewhere!
+
+### References
+https://egghead.io/blog/rails-graphql-typescript-react-apollo
+https://github.com/dotansimha/graphql-code-generator
+
+https://medium.com/simform-engineering/using-graphql-with-rails-7-building-efficient-apis-76006c14b8de
+https://medium.com/simform-engineering/data-manipulation-a-dive-into-graphql-mutations-in-rails-7-api-bca1f7f00bab
+https://medium.com/simform-engineering/securing-your-graphql-api-a-guide-to-authentication-and-authorization-in-rails-dcdacf672b67
+
+
+### howtographql tutorial
 
 See https://www.howtographql.com/graphql-ruby/1-getting-started/
 
 - skipped all the skip flags and used postgres for rails (`rails new estudio_morera -d postgresql`)
 - `bundle add graphql` instead of adding manually to Gemfile
 
-## GraphQL cheatsheet
 
-I'm an experienced Rails fullstack dev, but I'm entirely new to GraphQL, so this is my learning notepad. We all start somewhere!
-
-https://egghead.io/blog/rails-graphql-typescript-react-apollo
-https://github.com/dotansimha/graphql-code-generator
-
----
+### Cheatsheet
 
 Scaffolding a `model` and then a `graphql:object` will autogenerate the GraphQL type fields.
 
