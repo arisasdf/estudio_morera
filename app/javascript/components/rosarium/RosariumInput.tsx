@@ -22,7 +22,7 @@ const RosariumInput: React.FC<InputProps> = ({
   label,
   labelInside = false,
   placeholder = "",
-  value = null,
+  value = "",
 
   // UI props
   type = "text",

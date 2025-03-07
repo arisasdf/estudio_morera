@@ -31,6 +31,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-refresh": "^0.16.0",
+    "react-router": "^7.3.0",
     "roddeh-i18n": "^1.2.1",
     "sass": "^1.85.1",
     "sass-loader": "^16.0.5",

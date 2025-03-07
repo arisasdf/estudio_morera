@@ -7,12 +7,27 @@ import RosariumLogoPlaceholder from "@rosarium/RosariumLogoPlaceholder";
 import I18N from "../i18n/i18n";
 
 export const Login: React.FC = () => {
-  const [inputVal, setInputVal] = useState("");
+  const [emailVal, setEmailVal] = useState("");
+  const [passwordVal, setPasswordVal] = useState("");
   const [showRecover, setRecover] = useState(false);
 
-  // const onInput: void = (value) => {
+  const onEmailInput = (value: string): void => {
+    setEmailVal(value);
+  };
 
-  // }
+  const onPasswordInput = (value: string): void => {
+    setPasswordVal(value);
+  };
+
+  const onLoginClick = (): void => {
+    alert(
+      `Welcome ${emailVal}! Your password is ${passwordVal.length} characters.`
+    );
+  };
+
+  const onRecoverClick = (): void => {
+    alert(`Alright, ${emailVal}, we'll send you a recovery email.`);
+  };
 
   return (
     <>
@@ -26,6 +41,8 @@ export const Login: React.FC = () => {
               label={I18N("login.email")}
               size="large"
               labelInside
+              value={emailVal}
+              onInput={onEmailInput}
             />
             {!showRecover && (
               <RosariumInput
@@ -33,14 +50,20 @@ export const Login: React.FC = () => {
                 label={I18N("login.password")}
                 size="large"
                 labelInside
+                type="password"
+                value={passwordVal}
+                onInput={onPasswordInput}
               />
             )}
           </div>
           <div className="login-actions">
-            <RosariumButton
-              label={showRecover ? I18N("login.recover") : I18N("login.cta")}
-              variant="primary"
-            />
+            {showRecover && (
+              <RosariumButton
+                label={I18N("login.recover")}
+                variant="primary"
+                onClick={onRecoverClick}
+              />
+            )}
             {showRecover && (
               <RosariumButton
                 label={I18N("back")}
@@ -48,6 +71,13 @@ export const Login: React.FC = () => {
                   setRecover(false);
                 }}
                 variant="secondary"
+              />
+            )}
+            {!showRecover && (
+              <RosariumButton
+                label={I18N("login.cta")}
+                variant="primary"
+                onClick={onLoginClick}
               />
             )}
             {!showRecover && (
