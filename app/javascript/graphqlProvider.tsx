@@ -18,7 +18,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export const withProvider =
+export const withApolloProvider =
   (WrappedComponent: React.ComponentType, props: any = {}) =>
   () => {
     return (

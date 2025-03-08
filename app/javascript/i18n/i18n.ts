@@ -5,7 +5,7 @@ import es from "./locales/es";
 import { forOwn } from "lodash";
 
 // TODO: eventually get the language from the user I guess?
-const USER_LANGUAGE = "en";
+const USER_LANGUAGE = "es";
 
 const LOCALES = {
   en: en,

@@ -20,7 +20,7 @@ $footer-height: 30px;
       @include rosarium.flex-col;
       align-self: stretch;
       gap: rosarium.$distance-m;
-      margin: 40px 0 56px;
+      margin: rosarium.$distance-broad;
     }
 
     .login-actions {
