@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react";
 
 type ButtonSize = "small" | "medium" | "large";
-type ButtonVariant = "primary" | "secondary" | "outline";
+type ButtonVariant = "primary" | "secondary" | "primary-outline" | "secondary-outline";
 
 interface ButtonProps extends PropsWithChildren<any> {
   label?: string;

@@ -46,8 +46,6 @@ const RosariumInput: React.FC<InputProps> = ({
   };
 
   // Label
-  // TODO: consider a Label component to DRY
-
   let outerLabel: JSX.Element = <></>;
   let innerLabel: JSX.Element = <></>;
 

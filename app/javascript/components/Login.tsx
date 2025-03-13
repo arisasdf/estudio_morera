@@ -31,71 +31,58 @@ export const Login: React.FC = () => {
 
   return (
     <div className="login-body">
-      <header></header>
+      {/* <header>
+        <RosariumLogoPlaceholder width={200} height={80} />
+      </header> */}
       <main>
-        {/* <RosariumLogoPlaceholder /> */}
-        <div>
-          <RosariumH1>{I18N("login.heading")}</RosariumH1>
-          <div>
-            <RosariumInput
-              id="login-email"
-              placeholder={I18N("login.email")}
-              size="large"
-              value={emailVal}
-              onInput={onEmailInput}
+        {/* <RosariumH1>{I18N("login.heading")}</RosariumH1> */}
+        <RosariumInput
+          id="login-email"
+          placeholder={I18N("login.email")}
+          size="large"
+          value={emailVal}
+          onInput={onEmailInput}
+        />
+        {showRecover ? (
+          <>
+            <RosariumButton
+              label={I18N("login.recover")}
+              variant="primary"
+              onClick={onRecoverClick}
             />
-            {!showRecover && (
-              <RosariumInput
-                id="login-password"
-                placeholder={I18N("login.password")}
-                size="large"
-                type="password"
-                value={passwordVal}
-                onInput={onPasswordInput}
-              />
-            )}
-          </div>
-          <div className="login-actions">
-            {showRecover && (
-              <RosariumButton
-                label={I18N("login.recover")}
-                variant="primary"
-                onClick={onRecoverClick}
-              />
-            )}
-            {showRecover && (
-              <RosariumButton
-                label={I18N("back")}
-                onClick={() => {
-                  setRecover(false);
-                }}
-                variant="secondary"
-              />
-            )}
-            {!showRecover && (
-              <RosariumButton
-                label={I18N("login.cta")}
-                variant="primary"
-                onClick={onLoginClick}
-              />
-            )}
-            {!showRecover && (
-              <a
-                className="rosarium-link-small"
-                onClick={() => {
-                  setRecover(true);
-                }}
-              >
-                {I18N("login.recover")}
-              </a>
-            )}
-          </div>
-        </div>
+            <RosariumButton
+              label={I18N("back")}
+              onClick={() => setRecover(false)}
+              variant="secondary"
+            />
+          </>
+        ) : (
+          <>
+            <RosariumInput
+              id="login-password"
+              placeholder={I18N("login.password")}
+              size="large"
+              type="password"
+              value={passwordVal}
+              onInput={onPasswordInput}
+            />
+            <RosariumButton
+              label={I18N("login.cta")}
+              variant="primary"
+              onClick={onLoginClick}
+            />
+            <a className="rosarium-link-small" onClick={() => setRecover(true)}>
+              {I18N("login.recover")}
+            </a>
+          </>
+        )}
       </main>
-      <footer className="login-footer">
+      <footer>
         <span>
-          <a className="rosarium-link" href="https://lucia.cr">Lucía S</a> &ndash; Estudio Morera &copy;
-          2025
+          <a className="rosarium-link" href="https://lucia.cr">
+            Lucía S
+          </a>{" "}
+          &ndash; Estudio Morera &copy; 2025
         </span>
       </footer>
     </div>
