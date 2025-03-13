@@ -44,18 +44,12 @@ export const Login: React.FC = () => {
           onInput={onEmailInput}
         />
         {showRecover ? (
-          <>
             <RosariumButton
               label={I18N("login.recover")}
-              variant="primary"
+              size="large"
+              variant="primary-outline"
               onClick={onRecoverClick}
             />
-            <RosariumButton
-              label={I18N("back")}
-              onClick={() => setRecover(false)}
-              variant="secondary"
-            />
-          </>
         ) : (
           <>
             <RosariumInput
@@ -65,17 +59,18 @@ export const Login: React.FC = () => {
               type="password"
               value={passwordVal}
               onInput={onPasswordInput}
-            />
+              />
             <RosariumButton
               label={I18N("login.cta")}
-              variant="primary"
+              size="large"
+              variant="primary-outline"
               onClick={onLoginClick}
             />
-            <a className="rosarium-link-small" onClick={() => setRecover(true)}>
-              {I18N("login.recover")}
-            </a>
           </>
         )}
+        <a className="rosarium-link-small" onClick={() => setRecover(!showRecover)}>
+          {showRecover ? I18N("back") : I18N("login.recover")}
+        </a>
       </main>
       <footer>
         <span>

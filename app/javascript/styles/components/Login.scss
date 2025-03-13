@@ -1,10 +1,25 @@
 @use "../rosarium";
 
 .login-body {
+  @include rosarium.full-page;
+  @include rosarium.flex-col;
   background: url("../images/gemini-music-room.png");
   background-position: center; // media small: -290px center
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
+
+
+  main {
+    @include rosarium.flex-col;
+    width: 350px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: rosarium.$distance-m;
+    flex-grow: 1;
+  }
+
+  footer {
+    align-self: center;
+  }
 }
 
