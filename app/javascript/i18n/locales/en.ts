@@ -10,5 +10,12 @@ export default {
     password: "Password",
     cta: "Log in",
     recover: "Recover Password",
-  }
-}
+  },
+
+  // Navigation
+  nav: {
+    works: "Works",
+    students: "Students",
+    teachers: "Teachers",
+  },
+};

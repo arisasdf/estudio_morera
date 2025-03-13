@@ -30,26 +30,25 @@ export const Login: React.FC = () => {
   };
 
   return (
-    <>
-      <main className="login-page">
-        <RosariumLogoPlaceholder />
-        <RosariumCard>
+    <div className="login-body">
+      <header></header>
+      <main>
+        {/* <RosariumLogoPlaceholder /> */}
+        <div>
           <RosariumH1>{I18N("login.heading")}</RosariumH1>
-          <div className="login-inputs">
+          <div>
             <RosariumInput
               id="login-email"
-              label={I18N("login.email")}
+              placeholder={I18N("login.email")}
               size="large"
-              labelInside
               value={emailVal}
               onInput={onEmailInput}
             />
             {!showRecover && (
               <RosariumInput
                 id="login-password"
-                label={I18N("login.password")}
+                placeholder={I18N("login.password")}
                 size="large"
-                labelInside
                 type="password"
                 value={passwordVal}
                 onInput={onPasswordInput}
@@ -91,15 +90,15 @@ export const Login: React.FC = () => {
               </a>
             )}
           </div>
-        </RosariumCard>
+        </div>
       </main>
       <footer className="login-footer">
         <span>
-          <a href="https://lucia.cr">Lucía S</a> &ndash; Estudio Morera &copy;
+          <a className="rosarium-link" href="https://lucia.cr">Lucía S</a> &ndash; Estudio Morera &copy;
           2025
         </span>
       </footer>
-    </>
+    </div>
   );
 };
 

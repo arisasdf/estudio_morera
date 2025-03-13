@@ -1,43 +1,16 @@
 @use "../rosarium";
 
-$footer-height: 30px;
+.root-login {
+  background: url("../images/gemini-music-room.png");
+  background-position: center;
+  background-size: cover;
 
-.login-page {
-  @include rosarium.flex-col;
+  .login-header {
 
-  width: 100vw;
-  align-items: center;
-  padding-top: 20vh;
-  gap: rosarium.$distance-xxl;
-  padding-bottom: $footer-height + 30px;
+  }
 
-  .rosarium-card {
-    @include rosarium.flex-col;
-    align-items: center;
-    width: 400px;
+  .login-page {
 
-    .login-inputs {
-      @include rosarium.flex-col;
-      align-self: stretch;
-      gap: rosarium.$distance-m;
-      margin: rosarium.$distance-broad;
-    }
-
-    .login-actions {
-      @include rosarium.flex-col;
-      gap: rosarium.$distance-m;
-    }
   }
 }
 
-.login-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  height: $footer-height;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: rosarium.$font-size-xs;
-}

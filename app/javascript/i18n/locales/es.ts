@@ -11,4 +11,11 @@ export default {
     cta: "Ingresar",
     recover: "Recuperar contraseña",
   },
+
+  // Navigation
+  nav: {
+    works: "Obras",
+    students: "Estudiantes",
+    teachers: "Educadores",
+  },
 }

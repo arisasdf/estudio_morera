@@ -102,3 +102,14 @@ mutation {
   }
 }
 ```
+
+## Random notes
+
+
+For authorization:
+
+```typescript
+      <Route exact path="/">
+        {loggedIn ? <Redirect to="/dashboard" /> : <PublicHomePage />}
+      </Route>
+```

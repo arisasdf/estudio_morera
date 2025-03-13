@@ -11,22 +11,30 @@ menu, nav, output, ruby, section, summary {
   color: var(--tinctus-gray-900);
 }
 
-a {
+$link-sizes: "small", "medium", "large";
+
+@mixin rosarium-link {
   color: var(--tinctus-primary-600);
   text-decoration: underline;
   text-decoration-style: dotted;
   cursor: pointer;
-
-  &.rosarium-link-small {
-    font-size: measures.$font-size-s;
-  }
-
-  &.rosarium-link-medium {
-    font-size: measures.$font-size-m;
-  }
-
-  &.rosarium-link-large {
-    font-size: measures.$font-size-l;
-  }
 }
 
+.rosarium-link {
+  @include rosarium-link();
+}
+
+.rosarium-link-small {
+  @include rosarium-link();
+  font-size: measures.$font-size-s;
+}
+
+.rosarium-link-medium {
+  @include rosarium-link();
+  font-size: measures.$font-size-m;
+}
+
+.rosarium-link-large {
+  @include rosarium-link();
+  font-size: measures.$font-size-l;
+}

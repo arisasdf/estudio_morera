@@ -1,12 +1,11 @@
 import React, { JSX, PropsWithChildren } from "react";
 
 // TODO ideas:
-// - fake placeholder that moooves on larger inputs
 // - clear button
 // - button to see password on password types
 
 interface InputProps extends PropsWithChildren<any> {
-  label: string;
+  label?: string;
   labelInside?: boolean;
   size?: "small" | "medium" | "large";
   placeholder?: string;
@@ -19,7 +18,7 @@ interface InputProps extends PropsWithChildren<any> {
 
 const RosariumInput: React.FC<InputProps> = ({
   // Content
-  label,
+  label = "",
   labelInside = false,
   placeholder = "",
   value = undefined,
@@ -47,23 +46,30 @@ const RosariumInput: React.FC<InputProps> = ({
   };
 
   // Label
+  // TODO: consider a Label component to DRY
+
   let outerLabel: JSX.Element = <></>;
   let innerLabel: JSX.Element = <></>;
-  let finalPlaceholder: string = "";
+
+  const labelElement = (classInner: string): JSX.Element => {
+    return (
+      <label htmlFor={id} className={`rosarium-input-${classInner}-label`}>
+        {label}
+      </label>
+    );
+  };
 
   if (size === "large" && labelInside) {
-    innerLabel = (
-      <label htmlFor={id} className="rosarium-input-inner-label">
-        {label}
-      </label>
-    );
+    if (!label) {
+      console.error("Label inside requires a `label` prop.");
+    } else {
+      innerLabel = labelElement("inner");
+    }
   } else {
-    outerLabel = (
-      <label htmlFor={id} className="rosarium-input-outer-label">
-        {label}
-      </label>
-    );
-    finalPlaceholder = placeholder;
+    if (labelInside) {
+      console.warn("Only large inputs can have the label inside. Ya basic.");
+    }
+    outerLabel = labelElement("outer");
   }
 
   // Common props
@@ -81,7 +87,7 @@ const RosariumInput: React.FC<InputProps> = ({
           onKeyUp={onKeyUp}
           type={type}
           value={value}
-          placeholder={finalPlaceholder}
+          placeholder={labelInside ? "" : placeholder}
           {...inputProps}
         ></input>
       </div>
