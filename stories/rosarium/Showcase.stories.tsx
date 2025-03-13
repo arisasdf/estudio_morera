@@ -67,6 +67,17 @@ export const Buttons: Story = {
         size="large"
         variant="secondary-outline"
       />,
+      <RosariumButton label="Tiny" size="small" variant="locked" />,
+      <RosariumButton
+        label="Normal"
+        size="medium"
+        variant="locked"
+      />,
+      <RosariumButton
+        label="Very Large"
+        size="large"
+        variant="locked"
+      />,
     ],
   },
 };
