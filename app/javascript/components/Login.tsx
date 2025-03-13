@@ -46,7 +46,7 @@ export const Login: React.FC = () => {
           <RosariumButton
             label={I18N("login.recover")}
             size="large"
-            variant="primary-outline"
+            variant="primary"
             onClick={onRecoverClick}
           />
         ) : (
@@ -62,7 +62,7 @@ export const Login: React.FC = () => {
             <RosariumButton
               label={I18N("login.cta")}
               size="large"
-              variant="primary-outline"
+              variant="primary"
               onClick={onLoginClick}
             />
           </>

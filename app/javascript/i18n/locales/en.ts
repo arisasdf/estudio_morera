@@ -18,4 +18,9 @@ export default {
     students: "Students",
     teachers: "Teachers",
   },
+
+  // Works page
+  works: {
+    heading: "Works"
+  }
 };

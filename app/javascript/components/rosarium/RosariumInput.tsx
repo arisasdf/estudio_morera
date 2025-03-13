@@ -16,7 +16,7 @@ interface InputProps extends PropsWithChildren<any> {
   id?: string;
 }
 
-const RosariumInput: React.FC<InputProps> = ({
+export const RosariumInput: React.FC<InputProps> = ({
   // Content
   label = "",
   labelInside = false,

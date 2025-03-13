@@ -9,7 +9,7 @@ export const RosariumCard: React.FC<CardProps> = ({
   children,
 }) => {
   return (
-    <div className={`rosarium-card${translucent && "--translucent"}`}>
+    <div className={`rosarium-card${translucent ? "--translucent" : ""}`}>
       {children}
     </div>
   );

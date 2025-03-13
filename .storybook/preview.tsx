@@ -2,6 +2,7 @@ import React from 'react';
 import type { Preview } from '@storybook/react'
 
 import "../app/javascript/packs/application.scss"
+import "../stories/assets/stories.css"
 
 const preview: Preview = {
   globalTypes: {

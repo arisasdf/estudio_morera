@@ -2,8 +2,15 @@
 // We don't want this to be a kitchen sink,
 // but rather a place for truly, really global styles
 
-// TODO: decide if I need this
-// #root {
-//   height: 100vh;
-//   width: 100vw;
-// }
+
+// TEMPORARY HOME PAGE
+body {
+  background-color: var(--tinctus-gray-50);
+}
+
+.TODO-delete {
+  .rosarium-card {
+    margin: 15px auto;
+    width: 450px;
+  }
+}

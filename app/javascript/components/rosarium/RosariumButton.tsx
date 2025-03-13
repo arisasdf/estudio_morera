@@ -10,8 +10,8 @@ interface ButtonProps extends PropsWithChildren<any> {
   onClick?: () => void;
 }
 
-const RosariumButton: React.FC<ButtonProps> = ({
-  label = null,
+export const RosariumButton: React.FC<ButtonProps> = ({
+  label = "",
   size = "medium",
   variant = "secondary",
   onClick = () => {},

@@ -14,16 +14,3 @@
 @forward "rosarium/components/Button.scss";
 @forward "rosarium/components/Card.scss";
 @forward "rosarium/components/Heading.scss";
-
-/* TODO: temporary */
-body {
-  background-color: var(--tinctus-gray-50);
-}
-
-// Storybook
-.rosarium-container {
-  background-color: var(--tinctus-white);
-  border-radius: measures.$radius-l;
-  padding: measures.$distance-xl
-}
-/* end temporary */

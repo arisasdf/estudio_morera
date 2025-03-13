@@ -9,27 +9,9 @@ import I18N from "../i18n/i18n";
 export const SPALayout: React.FC<PropsWithChildren> = ({ children }) => {
   const location = useLocation();
 
-  console.log("My location:", location)
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        height: "100vh",
-        alignItems: "stretch",
-      }}
-    >
-      <nav
-        style={{
-          width: "250px",
-          backgroundColor: "var(--tinctus-primary-500)",
-          padding: "20px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "15px",
-          alignItems: "center",
-        }}
-      >
+    <div className="spa-body">
+      <nav>
         <RosariumLogoPlaceholder width={150} height={50} />
         <ul
           style={{

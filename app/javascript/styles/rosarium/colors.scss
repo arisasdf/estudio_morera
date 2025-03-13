@@ -52,7 +52,14 @@
   --vitrum-white-70: #ffffff4d;
   --vitrum-white-80: #ffffff33;
   --vitrum-white-90: #ffffff1a;
+
+  // Containers
+  --color-global-bg: var(--tinctus-gray-50);
+  --color-container-bg: var(--tinctus-gray-50);
 }
+
+
+
 
 // Shadows
 $card-shadow: 2px 2px 4px 0px --tinctus-gray-100;
