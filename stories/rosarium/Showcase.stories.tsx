@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 import ShowcaseGrid from "./showcase/ShowcaseGrid";
-import RosariumButton from '@rosarium/RosariumButton';
-import RosariumInput from '@rosarium/RosariumInput';
+import RosariumButton from "@rosarium/RosariumButton";
+import RosariumInput from "@rosarium/RosariumInput";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Showcase/Grid',
+  title: "Showcase/Grid",
   component: ShowcaseGrid,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'centered',
+    layout: "centered",
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   // tags: ['autodocs'],
@@ -24,12 +24,14 @@ const meta = {
           margin-bottom: 15px;
         }
       `;
-      return <>
-        <style>{styles}</style>
-        {story()}
-      </>
-    }
-  ]
+      return (
+        <>
+          <style>{styles}</style>
+          {story()}
+        </>
+      );
+    },
+  ],
 } satisfies Meta<typeof ShowcaseGrid>;
 
 export default meta;
@@ -43,16 +45,28 @@ export const Buttons: Story = {
     children: [
       <RosariumButton label="Tiny" size="small" variant="primary" />,
       <RosariumButton label="Normal" size="medium" variant="primary" />,
-      <RosariumButton label="Very Large" size="large" variant="primary"/>,
+      <RosariumButton label="Very Large" size="large" variant="primary" />,
       <RosariumButton label="Tiny" size="small" variant="primary-outline" />,
       <RosariumButton label="Normal" size="medium" variant="primary-outline" />,
-      <RosariumButton label="Very Large" size="large" variant="primary-outline"/>,
-      <RosariumButton label="Tiny" size="small" variant="secondary"/>,
-      <RosariumButton label="Normal" size="medium" variant="secondary"/>,
-      <RosariumButton label="Very Large" size="large" variant="secondary"/>,
-      <RosariumButton label="Tiny" size="small" variant="secondary-outline"/>,
-      <RosariumButton label="Normal" size="medium" variant="secondary-outline"/>,
-      <RosariumButton label="Very Large" size="large" variant="secondary-outline"/>,
+      <RosariumButton
+        label="Very Large"
+        size="large"
+        variant="primary-outline"
+      />,
+      <RosariumButton label="Tiny" size="small" variant="secondary" />,
+      <RosariumButton label="Normal" size="medium" variant="secondary" />,
+      <RosariumButton label="Very Large" size="large" variant="secondary" />,
+      <RosariumButton label="Tiny" size="small" variant="secondary-outline" />,
+      <RosariumButton
+        label="Normal"
+        size="medium"
+        variant="secondary-outline"
+      />,
+      <RosariumButton
+        label="Very Large"
+        size="large"
+        variant="secondary-outline"
+      />,
     ],
   },
 };
@@ -62,11 +76,37 @@ export const Inputs: Story = {
     title: "Inputs",
     rowLength: 3,
     children: [
-      <RosariumInput id="small-text" size="small" label="Email" placeholder="self@lucia.cr"/>,
-      <RosariumInput id="medium-text" size="medium" label="Email" placeholder="self@lucia.cr"/>,
-      <RosariumInput id="large-text" size="large" label="Email" placeholder="self@lucia.cr"/>,
-      <RosariumInput id="large-inside-text" size="large" label="Username" labelInside/>,
-      <RosariumInput id="large-inside-pwd" size="large" label="Password" labelInside type="password"/>,
+      <RosariumInput
+        id="small-text"
+        size="small"
+        label="Email"
+        placeholder="self@lucia.cr"
+      />,
+      <RosariumInput
+        id="medium-text"
+        size="medium"
+        label="Email"
+        placeholder="self@lucia.cr"
+      />,
+      <RosariumInput
+        id="large-text"
+        size="large"
+        label="Email"
+        placeholder="self@lucia.cr"
+      />,
+      <RosariumInput
+        id="large-inside-text"
+        size="large"
+        label="Username"
+        labelInside
+      />,
+      <RosariumInput
+        id="large-inside-pwd"
+        size="large"
+        label="Password"
+        labelInside
+        type="password"
+      />,
     ],
   },
 };

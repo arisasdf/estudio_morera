@@ -3,23 +3,21 @@
 .login-body {
   @include rosarium.full-page;
   @include rosarium.flex-col;
+  align-items: center;
   background: url("../images/gemini-music-room.png");
   background-position: center; // media small: -290px center
   background-size: cover;
 
-
   main {
     @include rosarium.flex-col;
-    width: 350px;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
     gap: rosarium.$distance-m;
-    flex-grow: 1;
-  }
+    width: 350px;
+    margin: auto;
+    align-items: center;
 
-  footer {
-    align-self: center;
+    .rosarium-input--large {
+      align-self: stretch;
+    }
   }
 }
 

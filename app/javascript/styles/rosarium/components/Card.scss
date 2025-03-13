@@ -7,3 +7,10 @@
   border-radius: measures.$radius-card;
   box-shadow: colors.$card-shadow;
 }
+
+.rosarium-card--translucent {
+  background-color: var(--vitrum-white-90);
+  padding: measures.$distance-xxl;
+  border-radius: measures.$radius-card;
+  box-shadow: colors.$card-shadow;
+}

@@ -43,7 +43,7 @@
 $variants: "primary", "secondary";
 
 @mixin rosarium-button-filled($main-color, $hover-color, $active-color) {
-  transition: colors.$button-bg-color-transition;
+  transition: colors.$button-color-transition;
   cursor: pointer;
 
   color: var(--tinctus-white);
@@ -52,16 +52,18 @@ $variants: "primary", "secondary";
   background-color: $main-color;
 
   &:hover {
+    border-color: $hover-color;
     background-color: $hover-color;
   }
 
   &:active {
+    border-color: $active-color;
     background-color: $active-color;
   }
 }
 
 @mixin rosarium-button-outline($main-color, $hover-color, $active-color) {
-  transition: colors.$button-bg-color-transition;
+  transition: colors.$button-color-transition;
   cursor: pointer;
 
   background-color: transparent;
@@ -89,9 +91,9 @@ $variants: "primary", "secondary";
 
 .rosarium-button--secondary {
   @include rosarium-button-filled(
-    $main-color: var(--tinctus-gray-400),
-    $hover-color: var(--tinctus-gray-300),
-    $active-color: var(--tinctus-gray-600)
+    $main-color: var(--tinctus-gray-300),
+    $hover-color: var(--tinctus-gray-200),
+    $active-color: var(--tinctus-gray-400)
   );
 }
 
@@ -106,7 +108,7 @@ $variants: "primary", "secondary";
 .rosarium-button--secondary-outline {
   @include rosarium-button-outline(
     $main-color: var(--tinctus-gray-400),
-    $hover-color: var(--tinctus-gray-300),
-    $active-color: var(--tinctus-gray-600)
+    $hover-color: var(--tinctus-gray-200),
+    $active-color: var(--tinctus-gray-500)
   );
 }

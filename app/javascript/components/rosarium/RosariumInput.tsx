@@ -51,7 +51,7 @@ const RosariumInput: React.FC<InputProps> = ({
 
   const labelElement = (classInner: string): JSX.Element => {
     return (
-      <label htmlFor={id} className={`rosarium-input-${classInner}-label`}>
+      <label htmlFor={id} className={`rosarium-input--${classInner}-label`}>
         {label}
       </label>
     );

@@ -34,8 +34,7 @@ export const Login: React.FC = () => {
       {/* <header>
         <RosariumLogoPlaceholder width={200} height={80} />
       </header> */}
-      <main>
-        {/* <RosariumH1>{I18N("login.heading")}</RosariumH1> */}
+      <main className="rosarium-card--translucent">
         <RosariumInput
           id="login-email"
           placeholder={I18N("login.email")}
@@ -47,7 +46,7 @@ export const Login: React.FC = () => {
             <RosariumButton
               label={I18N("login.recover")}
               size="large"
-              variant="primary-outline"
+              variant="primary"
               onClick={onRecoverClick}
             />
         ) : (
@@ -63,7 +62,7 @@ export const Login: React.FC = () => {
             <RosariumButton
               label={I18N("login.cta")}
               size="large"
-              variant="primary-outline"
+              variant="primary"
               onClick={onLoginClick}
             />
           </>

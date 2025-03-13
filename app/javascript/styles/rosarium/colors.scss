@@ -31,11 +31,31 @@
   --tinctus-gray-700: #4d4d4d;
   --tinctus-gray-800: #333333;
   --tinctus-gray-900: #1a1a1a;
+
+  // Opacity Variations
+  --vitrum-black-10: #000000e6;
+  --vitrum-black-20: #000000cc;
+  --vitrum-black-30: #000000b3;
+  --vitrum-black-40: #00000099;
+  --vitrum-black-50: #00000080;
+  --vitrum-black-60: #00000066;
+  --vitrum-black-70: #0000004d;
+  --vitrum-black-80: #00000033;
+  --vitrum-black-90: #0000001a;
+
+  --vitrum-white-10: #ffffffe6;
+  --vitrum-white-20: #ffffffcc;
+  --vitrum-white-30: #ffffffb3;
+  --vitrum-white-40: #ffffff99;
+  --vitrum-white-50: #ffffff80;
+  --vitrum-white-60: #ffffff66;
+  --vitrum-white-70: #ffffff4d;
+  --vitrum-white-80: #ffffff33;
+  --vitrum-white-90: #ffffff1a;
 }
 
 // Shadows
 $card-shadow: 2px 2px 4px 0px --tinctus-gray-100;
 
 // Transitions
-$button-bg-color-transition: background-color 0.1s ease;
-$input-bg-color-transition: background-color 0.5s ease;
+$button-color-transition: background-color 0.1s ease, border-color 0.1s ease;
