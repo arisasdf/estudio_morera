@@ -7,21 +7,38 @@ interface ShowcaseGridProps extends PropsWithChildren<any> {
   rowLength?: number;
 }
 
-const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({ title, rowLength = 3, children }) => {
+const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
+  title,
+  rowLength = 3,
+  children,
+}) => {
   const childrenRows = _.chunk(Children.toArray(children), rowLength);
 
-  return <>
-    <RosariumH3>{title}</RosariumH3>
-    <table>
-      {childrenRows.map((row) => (
-        <tr>
-          { row.map((child) => (
-            <td style={{padding: "10px", border: "1px solid var(--tinctus-gray-200)"}}>{child}</td>
+  return (
+    <>
+      <RosariumH3>{title}</RosariumH3>
+      <table>
+        <tbody>
+          {childrenRows.map((row, rIndex) => (
+            <tr key={rIndex}>
+              {row.map((child, dIndex) => (
+                <td
+                  style={{
+                    padding: "10px",
+                    border: "1px solid var(--tinctus-gray-200)",
+                    verticalAlign: "middle",
+                  }}
+                  key={`${rIndex}-${dIndex}`}
+                >
+                  {child}
+                </td>
+              ))}
+            </tr>
           ))}
-        </tr>
-      ))}
-    </table>
-  </>
+        </tbody>
+      </table>
+    </>
+  );
 };
 
 export default ShowcaseGrid;

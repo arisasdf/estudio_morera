@@ -62,11 +62,11 @@ export const Inputs: Story = {
     title: "Inputs",
     rowLength: 3,
     children: [
-      <RosariumInput size="small" label="Email" placeholder="self@lucia.cr"/>,
-      <RosariumInput size="medium" label="Email" placeholder="self@lucia.cr"/>,
-      <RosariumInput size="large" label="Email" placeholder="self@lucia.cr"/>,
-      <RosariumInput size="large" label="Username" labelInside/>,
-      <RosariumInput size="large" label="Password" labelInside type="password"/>,
+      <RosariumInput id="small-text" size="small" label="Email" placeholder="self@lucia.cr"/>,
+      <RosariumInput id="medium-text" size="medium" label="Email" placeholder="self@lucia.cr"/>,
+      <RosariumInput id="large-text" size="large" label="Email" placeholder="self@lucia.cr"/>,
+      <RosariumInput id="large-inside-text" size="large" label="Username" labelInside/>,
+      <RosariumInput id="large-inside-pwd" size="large" label="Password" labelInside type="password"/>,
     ],
   },
 };

@@ -15,6 +15,7 @@
     $h-padding: measures.$distance-xs,
     $v-padding: measures.$distance-s,
     $border-width: 1px
+    /* border-radius: 4px */
   );
 }
 
@@ -24,6 +25,7 @@
     $h-padding: measures.$distance-s,
     $v-padding: measures.$distance-m,
     $border-width: 1px
+    /* border-radius: 6px */
   );
 }
 
@@ -33,6 +35,8 @@
     $h-padding: measures.$distance-m,
     $v-padding: measures.$distance-l,
     $border-width: 2px
+    /* border-radius: 8px */
+    /* TODO: radiuses, same with inputs */
   );
 }
 

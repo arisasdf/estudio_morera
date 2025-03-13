@@ -12,7 +12,7 @@
 ) {
   @include utilities.flex-col;
 
-  .rosarium-input-outer-label {
+  .rosarium-input--outer-label {
     color: var(--tinctus-gray-700);
     font-size: $label-font-size;
     padding: 0 0 0 measures.$distance-s;
@@ -81,7 +81,7 @@
   .rosarium-input-wrapper {
     position: relative;
 
-    label {
+    .rosarium-input--inner-label {
       position: absolute;
       top: 0;
       left: 0;
@@ -89,8 +89,10 @@
       margin: measures.$distance-m;
       border-radius: measures.$radius-s;
       font-size: measures.$font-size-xl;
-      color: var(--tinctus-gray-600);
+      /* TODO: this is a good candidate for a next level variable (color-input-placeholder)*/
+      color: var(--tinctus-gray-400);
       transition: all 0.3s ease;
+      cursor: text;
 
       &:has(+ input:not(:placeholder-shown)),
       &:has(+ input:focus) {
@@ -100,8 +102,10 @@
         padding: measures.$distance-xxs measures.$distance-xs;
         font-size: measures.$font-size-l;
         height: 1.2em;
+        /* TODO: also good variable candidate or even mixin */
         color: var(--tinctus-gray-700);
         background-color: var(--tinctus-white);
+        cursor: default;
       }
     }
   }
