@@ -7,3 +7,24 @@ body {
   border-radius: 8px;
   padding: 24px;
 }
+
+.rosarium--showcase-grid {
+  td {
+    padding: 10px;
+    border: 1px solid var(--tinctus-gray-200);
+    vertical-align: middle;
+  }
+
+  span[class^="rosarium-icon"] {
+    background-color: var(--tinctus-primary-800);
+    cursor: crosshair;
+
+    &:hover {
+      background-color: var(--tinctus-primary-400);
+    }
+  }
+}
+
+.rosarium--showcase-grid-single {
+  max-width: 600px;
+}

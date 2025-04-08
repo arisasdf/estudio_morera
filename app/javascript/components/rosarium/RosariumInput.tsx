@@ -91,6 +91,13 @@ export const RosariumInput: React.FC<InputProps> = ({
     outerLabel = labelElement("outer");
   }
 
+  // Trailing element
+  let trailingElement: JSX.Element = <></>;
+
+  if (type == "password") {
+    trailingElement = <i>👁️</i>
+  }
+
   // Common props
   const inputProps: { id?: string } = {};
   if (id) inputProps.id = id;
@@ -109,6 +116,7 @@ export const RosariumInput: React.FC<InputProps> = ({
           placeholder={placeholderText}
           {...inputProps}
         ></input>
+        {trailingElement}
       </div>
     </div>
   );

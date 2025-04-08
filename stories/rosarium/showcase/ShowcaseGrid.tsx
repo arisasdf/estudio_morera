@@ -16,22 +16,13 @@ const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
 
   return (
     <>
-      <RosariumH3>{title}</RosariumH3>
-      <table>
+      <RosariumH3 className="rosarium--showcase-heading">{title}</RosariumH3>
+      <table className={`rosarium--showcase-grid ${columns == 1 ? "rosarium--showcase-grid-single" : ""}`}>
         <tbody>
           {childrenRows.map((row, rIndex) => (
             <tr key={rIndex}>
               {row.map((child, dIndex) => (
-                <td
-                  style={{
-                    padding: "10px",
-                    border: "1px solid var(--tinctus-gray-200)",
-                    verticalAlign: "middle",
-                  }}
-                  key={`${rIndex}-${dIndex}`}
-                >
-                  {child}
-                </td>
+                <td key={`${rIndex}-${dIndex}`}>{child}</td>
               ))}
             </tr>
           ))}

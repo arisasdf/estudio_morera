@@ -1,9 +1,10 @@
 @use "measures.scss";
 
-@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&display=swap');
+/* Consider this lovely font for hero headers https://fonts.google.com/specimen/Imperial+Script?preview.text=Estudio%20L%C3%ADrico%20Morera&categoryFilters=Feeling:%2FExpressive%2FFancy */
+@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 html, body, div, span, p, button, label, input, a,
-h1, h2, h3, h4, h5, h6, blockquote, ol, ul, li,
+blockquote, ol, ul, li,
 legend, table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, footer, header, hgroup,
 menu, nav, output, ruby, section, summary {
@@ -11,7 +12,22 @@ menu, nav, output, ruby, section, summary {
   color: var(--tinctus-gray-900);
 }
 
-$link-sizes: "small", "medium", "large";
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins';
+}
+
+.rosarium-paragraph {
+  margin-bottom: 1em;
+}
+
+b {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+  opacity: 0.9;
+}
 
 @mixin rosarium-link {
   color: var(--tinctus-primary-600);

@@ -1,0 +1,24 @@
+// .rosarium-icon--${name}${filled ? "-filled"
+
+span[class^="rosarium-icon"] {
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+
+// Themes
+@mixin rosarium-icon($icon-name) {
+  .rosarium-icon--#{$icon-name} {
+    mask-image: url("/app/javascript/images/icons/#{$icon-name}.svg");
+  }
+  .rosarium-icon--#{$icon-name}-filled {
+    mask-image: url("/app/javascript/images/icons/#{$icon-name}-filled.svg");
+  }
+}
+
+// #icons-list
+$icons: "close", "done", "eye-hide", "eye-show", "heart", "home", "search",
+  "settings", "star";
+
+@each $icon-name in $icons {
+  @include rosarium-icon($icon-name);
+}
