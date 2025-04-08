@@ -26,18 +26,19 @@
 
   input {
     font-size: $input-font-size;
-    border-color: var(--tinctus-primary-400);
-    border-style: solid;
+    border-bottom: 3px solid var(--tinctus-primary-400);
     padding: $v-padding $h-padding;
-    border-radius: measures.$radius-l;
-    height: $height;
-    /* TODO: consider border color instead, make variable, etc */
-    box-shadow: 0px 0px 0px 0px var(--tinctus-primary-100);
-    transition: box-shadow 0.3s ease;
+    height: $height + ($v-padding * 2);
+    transition: background-color 0.3s ease;
+    background-color: var(--tinctus-primary-25);
 
     &:focus {
       outline: none;
-      box-shadow: 0px 0px 5px 1px var(--tinctus-primary-100);
+      background-color: var(--tinctus-primary-100);
+
+      &::placeholder {
+        color: var(--tinctus-gray-600);
+      }
     }
 
     &::placeholder {
@@ -55,23 +56,17 @@
     $h-padding: measures.$distance-s,
     $v-padding: measures.$distance-xs
   );
-  input {
-    border-width: 1px;
-  }
 }
 
 .rosarium-input--medium {
   @include rosarium-input(
     $input-font-size: measures.$font-size-l,
     $label-font-size: measures.$font-size-m,
-    $gap: measures.$distance-xs,
+    $gap: measures.$distance-s,
     $height: measures.$font-size-l,
     $h-padding: measures.$distance-m,
     $v-padding: measures.$distance-s
   );
-  input {
-    border-width: 1px;
-  }
 }
 
 .rosarium-input--large {
@@ -83,9 +78,6 @@
     $h-padding: measures.$distance-m,
     $v-padding: measures.$distance-m
   );
-  input {
-    border-width: 2px;
-  }
 
   .rosarium-input-wrapper {
     position: relative;
@@ -105,16 +97,17 @@
 
       &:has(+ input:not(:placeholder-shown)),
       &:has(+ input:focus) {
-        top: -10px;
+        top: -18px;
         left: 8px;
         margin: 0;
-        padding: measures.$distance-xxs measures.$distance-xs;
-        font-size: measures.$font-size-l;
-        height: 1.2em;
+        padding: measures.$distance-xxs measures.$distance-s;
+        font-size: measures.$font-size-m;
+        height: measures.$distance-xl;
         /* TODO: also good variable candidate or even mixin */
         color: var(--tinctus-gray-700);
         background-color: var(--tinctus-white);
         cursor: default;
+        border: 1px solid var(--tinctus-primary-300);
       }
     }
   }

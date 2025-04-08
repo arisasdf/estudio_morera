@@ -1,8 +1,11 @@
 import React, { JSX, PropsWithChildren } from "react";
+import Rosarium from "../../rosarium/Rosarium";
 
 // TODO ideas:
 // - clear button
 // - button to see password on password types
+
+const ERROR_LABEL: string = "[YA BASIC]";
 
 interface InputProps extends PropsWithChildren<any> {
   label?: string;
@@ -14,6 +17,7 @@ interface InputProps extends PropsWithChildren<any> {
   onInput?: (arg0: string) => void;
   onSubmit?: () => void;
   id?: string;
+  enforceLabel?: boolean;
 }
 
 export const RosariumInput: React.FC<InputProps> = ({
@@ -22,6 +26,7 @@ export const RosariumInput: React.FC<InputProps> = ({
   labelInside = false,
   placeholder = "",
   value = undefined,
+  enforceLabel = true,
 
   // UI props
   type = "text",
@@ -45,28 +50,44 @@ export const RosariumInput: React.FC<InputProps> = ({
     }
   };
 
-  // Label
+  // Label and placeholder
   let outerLabel: JSX.Element = <></>;
   let innerLabel: JSX.Element = <></>;
+  let placeholderText: string = placeholder;
 
-  const labelElement = (classInner: string): JSX.Element => {
+  const labelElement = (type: string): JSX.Element => {
     return (
-      <label htmlFor={id} className={`rosarium-input--${classInner}-label`}>
-        {label}
+      <label htmlFor={id} className={`rosarium-input--${type}-label`}>
+        {label || (enforceLabel ? ERROR_LABEL : "")}
       </label>
     );
   };
 
-  if (size === "large" && labelInside) {
-    if (!label) {
-      console.error("Label inside requires a `label` prop.");
+  if (!label) {
+    if (enforceLabel) {
+      Rosarium.error("[Input] Where's the label? Ya basic.");
     } else {
+      Rosarium.warn("[Input] Use of labels is recommended for all inputs.");
+    }
+  }
+
+  if (labelInside) {
+    if (size === "large") {
       innerLabel = labelElement("inner");
+      if (placeholder) {
+        Rosarium.warn("[Input] Placeholder overridden.")
+        placeholderText = "";
+      }
+    } else if (enforceLabel) {
+      Rosarium.error("[Input] Only large inputs should have the label inside. Ya basic.");
+      placeholderText = ERROR_LABEL;
+    } else {
+      if (placeholder) {
+        Rosarium.warn("[Input] Placeholder overridden.")
+      }
+      placeholderText = label;
     }
   } else {
-    if (labelInside) {
-      console.warn("Only large inputs can have the label inside. Ya basic.");
-    }
     outerLabel = labelElement("outer");
   }
 
@@ -85,7 +106,7 @@ export const RosariumInput: React.FC<InputProps> = ({
           onKeyUp={onKeyUp}
           type={type}
           value={value}
-          placeholder={labelInside ? "" : placeholder}
+          placeholder={placeholderText}
           {...inputProps}
         ></input>
       </div>
