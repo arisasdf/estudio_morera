@@ -41,6 +41,7 @@ export const Login: React.FC = () => {
           size="large"
           value={emailVal}
           onInput={onEmailInput}
+          ignoreLabelEnforcement
         />
         {showRecover ? (
           <RosariumButton
@@ -58,6 +59,7 @@ export const Login: React.FC = () => {
               type="password"
               value={passwordVal}
               onInput={onPasswordInput}
+              ignoreLabelEnforcement
             />
             <RosariumButton
               label={I18N("login.cta")}
@@ -67,7 +69,7 @@ export const Login: React.FC = () => {
             />
           </>
         )}
-        <a className="rosarium-link-small" onClick={() => setRecover(!showRecover)}>
+        <a className="rosarium-link" onClick={() => setRecover(!showRecover)}>
           {showRecover ? I18N("back") : I18N("login.recover")}
         </a>
       </main>

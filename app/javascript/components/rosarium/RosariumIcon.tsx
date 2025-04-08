@@ -8,11 +8,28 @@ interface IconProps extends PropsWithChildren<any> {
   name: string;
   filled?: boolean;
   size?: string;
+  onClick?: () => void;
 }
 
-export const RosariumIcon: React.FC<IconProps> = ({ name, filled = false, size = "15px" }) => {
+export const RosariumIcon: React.FC<IconProps> = ({
+  name,
+  filled = false,
+  size = "",
+  onClick = () => {},
+}) => {
+  const iconStyle: any = {};
+
+  if (size) {
+    iconStyle.width = size;
+    iconStyle.height = size;
+  }
+
   return (
-    <span className={`rosarium-icon--${name}${filled ? "-filled" : ""}`} style={{width: size, height: size}}></span>
+    <span
+      className={`rosarium-icon--${name}${filled ? "-filled" : ""}`}
+      style={iconStyle}
+      onClick={onClick}
+    ></span>
   );
 };
 

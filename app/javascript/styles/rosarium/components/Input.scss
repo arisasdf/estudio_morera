@@ -8,6 +8,8 @@ $input-border-bottom-thickness-large: 3px;
 
 .rosarium-input-wrapper {
   @include utilities.flex-row;
+  align-items: center;
+
   transition: background-color 0.3s ease;
   background-color: var(--tinctus-primary-25);
 
@@ -31,6 +33,16 @@ $input-border-bottom-thickness-large: 3px;
       color: var(--tinctus-gray-400);
     }
   }
+
+  .rosarium-icon--eye-hide,
+  .rosarium-icon--eye-show {
+    background-color: var(--tinctus-primary-600);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--tinctus-primary-400);
+    }
+  }
 }
 
 @mixin rosarium-input(
@@ -40,7 +52,7 @@ $input-border-bottom-thickness-large: 3px;
   $height,
   $h-padding,
   $v-padding,
-  $border-bottom-thickness,
+  $border-bottom-thickness
 ) {
   @include utilities.flex-col;
 
@@ -58,6 +70,12 @@ $input-border-bottom-thickness-large: 3px;
     input {
       font-size: $input-font-size;
     }
+
+    .rosarium-icon--eye-hide,
+    .rosarium-icon--eye-show {
+      width: $input-font-size;
+      height: $input-font-size;
+    }
   }
 }
 
@@ -69,7 +87,7 @@ $input-border-bottom-thickness-large: 3px;
     $height: measures.$font-size-s,
     $h-padding: measures.$distance-s,
     $v-padding: measures.$distance-xs,
-    $border-bottom-thickness: $input-border-bottom-thickness-small,
+    $border-bottom-thickness: $input-border-bottom-thickness-small
   );
 }
 
@@ -81,7 +99,7 @@ $input-border-bottom-thickness-large: 3px;
     $height: measures.$font-size-l,
     $h-padding: measures.$distance-m,
     $v-padding: measures.$distance-s,
-    $border-bottom-thickness: $input-border-bottom-thickness-medium,
+    $border-bottom-thickness: $input-border-bottom-thickness-medium
   );
 }
 
@@ -93,7 +111,7 @@ $input-border-bottom-thickness-large: 3px;
     $height: measures.$font-size-xl,
     $h-padding: measures.$distance-m,
     $v-padding: measures.$distance-m,
-    $border-bottom-thickness: $input-border-bottom-thickness-large,
+    $border-bottom-thickness: $input-border-bottom-thickness-large
   );
 
   .rosarium-input-wrapper {

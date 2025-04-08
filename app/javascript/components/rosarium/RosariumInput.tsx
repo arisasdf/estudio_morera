@@ -1,5 +1,6 @@
-import React, { JSX, PropsWithChildren } from "react";
+import React, { JSX, PropsWithChildren, useState } from "react";
 import Rosarium from "../../rosarium/Rosarium";
+import RosariumIcon from "./RosariumIcon";
 
 // TODO ideas:
 // - clear button
@@ -17,7 +18,7 @@ interface InputProps extends PropsWithChildren<any> {
   onInput?: (arg0: string) => void;
   onSubmit?: () => void;
   id?: string;
-  enforceLabel?: boolean;
+  ignoreLabelEnforcement?: boolean;
 }
 
 export const RosariumInput: React.FC<InputProps> = ({
@@ -26,7 +27,7 @@ export const RosariumInput: React.FC<InputProps> = ({
   labelInside = false,
   placeholder = "",
   value = undefined,
-  enforceLabel = true,
+  ignoreLabelEnforcement = false,
 
   // UI props
   type = "text",
@@ -39,6 +40,9 @@ export const RosariumInput: React.FC<InputProps> = ({
   // Other
   id = null,
 }) => {
+  // State declarations
+  const [passwordVisibility, setPasswordVisibility] = useState(false);
+
   // Input and submit
   const onNativeInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
     onInput(e.target.value);
@@ -58,16 +62,16 @@ export const RosariumInput: React.FC<InputProps> = ({
   const labelElement = (type: string): JSX.Element => {
     return (
       <label htmlFor={id} className={`rosarium-input--${type}-label`}>
-        {label || (enforceLabel ? ERROR_LABEL : "")}
+        {label || (ignoreLabelEnforcement ? "" : ERROR_LABEL)}
       </label>
     );
   };
 
   if (!label) {
-    if (enforceLabel) {
-      Rosarium.error("[Input] Where's the label? Ya basic.");
-    } else {
+    if (ignoreLabelEnforcement) {
       Rosarium.warn("[Input] Use of labels is recommended for all inputs.");
+    } else {
+      Rosarium.error("[Input] Where's the label? Ya basic.");
     }
   }
 
@@ -75,17 +79,19 @@ export const RosariumInput: React.FC<InputProps> = ({
     if (size === "large") {
       innerLabel = labelElement("inner");
       if (placeholder) {
-        Rosarium.warn("[Input] Placeholder overridden.")
+        Rosarium.warn("[Input] Placeholder overridden.");
         placeholderText = "";
       }
-    } else if (enforceLabel) {
-      Rosarium.error("[Input] Only large inputs should have the label inside. Ya basic.");
-      placeholderText = ERROR_LABEL;
-    } else {
+    } else if (ignoreLabelEnforcement) {
       if (placeholder) {
-        Rosarium.warn("[Input] Placeholder overridden.")
+        Rosarium.warn("[Input] Placeholder overridden.");
       }
       placeholderText = label;
+    } else {
+      Rosarium.error(
+        "[Input] Only large inputs should have the label inside. Ya basic."
+      );
+      placeholderText = ERROR_LABEL;
     }
   } else {
     outerLabel = labelElement("outer");
@@ -95,7 +101,15 @@ export const RosariumInput: React.FC<InputProps> = ({
   let trailingElement: JSX.Element = <></>;
 
   if (type == "password") {
-    trailingElement = <i>👁️</i>
+    trailingElement = (
+      <RosariumIcon
+        onClick={() => {
+          // TODO: refocus input?
+          setPasswordVisibility(!passwordVisibility);
+        }}
+        name={passwordVisibility ? "eye-hide" : "eye-show"}
+      />
+    );
   }
 
   // Common props
@@ -111,7 +125,7 @@ export const RosariumInput: React.FC<InputProps> = ({
         <input
           onInput={onNativeInput}
           onKeyUp={onKeyUp}
-          type={type}
+          type={type == "password" && !passwordVisibility ? "password" : "text"}
           value={value}
           placeholder={placeholderText}
           {...inputProps}
