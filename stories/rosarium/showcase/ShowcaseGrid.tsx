@@ -4,15 +4,15 @@ import React, { Children, PropsWithChildren } from "react";
 
 interface ShowcaseGridProps extends PropsWithChildren<any> {
   title: string;
-  rowLength?: number;
+  columns?: number;
 }
 
 const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
   title,
-  rowLength = 3,
+  columns = 3,
   children,
 }) => {
-  const childrenRows = _.chunk(Children.toArray(children), rowLength);
+  const childrenRows = _.chunk(Children.toArray(children), columns);
 
   return (
     <>

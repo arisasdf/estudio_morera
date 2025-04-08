@@ -2,39 +2,25 @@
 @use "../colors.scss";
 @use "../utilities.scss";
 
-@mixin rosarium-input(
-  $input-font-size,
-  $label-font-size,
-  $gap,
-  $height,
-  $h-padding,
-  $v-padding
-) {
-  @include utilities.flex-col;
+$input-border-bottom-thickness-small: 2px;
+$input-border-bottom-thickness-medium: 3px;
+$input-border-bottom-thickness-large: 3px;
 
-  .rosarium-input--outer-label {
-    color: var(--tinctus-gray-700);
-    font-size: $label-font-size;
-    padding: 0 0 0 measures.$distance-s;
-    margin-bottom: $gap;
-  }
+.rosarium-input-wrapper {
+  @include utilities.flex-row;
+  transition: background-color 0.3s ease;
+  background-color: var(--tinctus-primary-25);
 
-  .rosarium-input-wrapper {
-    @include utilities.flex-col;
-    align-items: stretch;
+  &:focus-within {
+    background-color: var(--tinctus-primary-100);
   }
 
   input {
-    font-size: $input-font-size;
-    border-bottom: 3px solid var(--tinctus-primary-400);
-    padding: $v-padding $h-padding;
-    height: $height + ($v-padding * 2);
-    transition: background-color 0.3s ease;
-    background-color: var(--tinctus-primary-25);
+    flex-grow: 1;
+    background-color: transparent;
 
     &:focus {
       outline: none;
-      background-color: var(--tinctus-primary-100);
 
       &::placeholder {
         color: var(--tinctus-gray-600);
@@ -47,6 +33,34 @@
   }
 }
 
+@mixin rosarium-input(
+  $input-font-size,
+  $label-font-size,
+  $gap,
+  $height,
+  $h-padding,
+  $v-padding,
+  $border-bottom-thickness,
+) {
+  @include utilities.flex-col;
+
+  .rosarium-input--outer-label {
+    color: var(--tinctus-gray-700);
+    font-size: $label-font-size;
+    padding: 0 0 0 measures.$distance-s;
+    margin-bottom: $gap;
+  }
+
+  .rosarium-input-wrapper {
+    padding: $v-padding $h-padding;
+    border-bottom: $border-bottom-thickness solid var(--tinctus-primary-400);
+
+    input {
+      font-size: $input-font-size;
+    }
+  }
+}
+
 .rosarium-input--small {
   @include rosarium-input(
     $input-font-size: measures.$font-size-s,
@@ -54,7 +68,8 @@
     $gap: measures.$distance-xs,
     $height: measures.$font-size-s,
     $h-padding: measures.$distance-s,
-    $v-padding: measures.$distance-xs
+    $v-padding: measures.$distance-xs,
+    $border-bottom-thickness: $input-border-bottom-thickness-small,
   );
 }
 
@@ -65,7 +80,8 @@
     $gap: measures.$distance-s,
     $height: measures.$font-size-l,
     $h-padding: measures.$distance-m,
-    $v-padding: measures.$distance-s
+    $v-padding: measures.$distance-s,
+    $border-bottom-thickness: $input-border-bottom-thickness-medium,
   );
 }
 
@@ -76,7 +92,8 @@
     $gap: measures.$distance-s,
     $height: measures.$font-size-xl,
     $h-padding: measures.$distance-m,
-    $v-padding: measures.$distance-m
+    $v-padding: measures.$distance-m,
+    $border-bottom-thickness: $input-border-bottom-thickness-large,
   );
 
   .rosarium-input-wrapper {

@@ -41,7 +41,7 @@ type Story = StoryObj<typeof meta>;
 export const Buttons: Story = {
   args: {
     title: "Buttons",
-    rowLength: 3,
+    columns: 3,
     children: [
       <RosariumButton label="Tiny" size="small" variant="primary" />,
       <RosariumButton label="Normal" size="medium" variant="primary" />,
@@ -85,7 +85,7 @@ export const Buttons: Story = {
 export const Inputs: Story = {
   args: {
     title: "Inputs",
-    rowLength: 3,
+    columns: 2,
     children: [
       <RosariumInput
         id="small-text"
@@ -94,10 +94,22 @@ export const Inputs: Story = {
         placeholder="self@lucia.cr"
       />,
       <RosariumInput
+        id="small-password"
+        size="small"
+        label="Password"
+        type="password"
+      />,
+      <RosariumInput
         id="medium-text"
         size="medium"
         label="Email"
         placeholder="self@lucia.cr"
+      />,
+      <RosariumInput
+        id="medium-password"
+        size="medium"
+        label="Password"
+        type="password"
       />,
       <RosariumInput
         id="large-text"
@@ -106,13 +118,7 @@ export const Inputs: Story = {
         placeholder="self@lucia.cr"
       />,
       <RosariumInput
-        id="large-inside-text"
-        size="large"
-        label="Username"
-        labelInside
-      />,
-      <RosariumInput
-        id="large-inside-pwd"
+        id="large-password"
         size="large"
         label="Password"
         labelInside
