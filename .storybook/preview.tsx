@@ -29,6 +29,11 @@ const preview: Preview = {
        date: /Date$/i,
       },
     },
+    options: {
+      storySort: {
+        order: ["Components", "*", "Showcase", ["*", "Components"] ],
+      },
+    },
   },
   decorators: [ // TODO: add class rosarium-page-backround para que sea el color que yo quiero con el tema
     (Story, context) => (<div className={`rosarium-theme--${context.globals.theme} rosarium-container`}><Story /></div>)

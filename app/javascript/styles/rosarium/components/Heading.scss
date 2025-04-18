@@ -11,3 +11,8 @@ h1, h2, h3, h4, h5, h6 {
     font-size: map.get(measures.$font-size-headings, $level);
   }
 }
+
+.rosarium-hero {
+  font-size: measures.$font-size-hero;
+  color: var(--tinctus-primary-600);
+}
