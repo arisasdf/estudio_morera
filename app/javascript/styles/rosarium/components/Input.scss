@@ -9,6 +9,7 @@ $input-border-bottom-thickness-large: 3px;
 .rosarium-input-wrapper {
   @include utilities.flex-row;
   align-items: center;
+  cursor: text;
 
   transition: background-color 0.3s ease;
   background-color: var(--tinctus-primary-25);

@@ -1,4 +1,4 @@
-import React, { JSX, PropsWithChildren, useState } from "react";
+import React, { JSX, PropsWithChildren, useRef, useState } from "react";
 import Rosarium from "../../rosarium/Rosarium";
 import RosariumIcon from "./RosariumIcon";
 
@@ -42,6 +42,7 @@ export const RosariumInput: React.FC<InputProps> = ({
 }) => {
   // State declarations
   const [passwordVisibility, setPasswordVisibility] = useState(false);
+  const inputRef = useRef(null);
 
   // Input and submit
   const onNativeInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -104,7 +105,6 @@ export const RosariumInput: React.FC<InputProps> = ({
     trailingElement = (
       <RosariumIcon
         onClick={() => {
-          // TODO: refocus input?
           setPasswordVisibility(!passwordVisibility);
         }}
         name={passwordVisibility ? "eye-hide" : "eye-show"}
@@ -120,14 +120,15 @@ export const RosariumInput: React.FC<InputProps> = ({
   return (
     <div className={`rosarium-input--${size}`}>
       {outerLabel}
-      <div className="rosarium-input-wrapper">
+      <div className="rosarium-input-wrapper" onClick={() => { inputRef.current.focus(); }}>
         {innerLabel}
         <input
+          ref={inputRef}
           onInput={onNativeInput}
           onKeyUp={onKeyUp}
+          placeholder={placeholderText}
           type={type == "password" && !passwordVisibility ? "password" : "text"}
           value={value}
-          placeholder={placeholderText}
           {...inputProps}
         ></input>
         {trailingElement}
