@@ -2,6 +2,7 @@ export default {
   hello_world: "Hello world!",
   // Generic
   back: "Back",
+  madeBy: "Made with ♡ by",
 
   // Login page
   login: {

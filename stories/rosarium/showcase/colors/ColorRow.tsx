@@ -1,4 +1,6 @@
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, useState } from "react";
+import { PopoverPicker } from "./PopoverPicker";
+import RosariumIcon from "@javascript/components/rosarium/RosariumIcon";
 
 // Color utilities
 // ===============
@@ -44,7 +46,9 @@ const rgbToHsl = (r: number, g: number, b: number): number[] => {
 
 const contrastingColor = (
   hex: string,
-  r0: number, g0: number, b0: number
+  r0: number,
+  g0: number,
+  b0: number
 ): string => {
   let [r, g, b, a] = hex
     .replace(
@@ -53,8 +57,8 @@ const contrastingColor = (
     )
     .match(/(..)/g)
     .map((rgb) => parseInt("0x" + rgb));
-    // debugger
-  return (((~~(r * 299) + ~~(g * 587) + ~~(b * 114)) / 1000) >= 128)
+  // debugger
+  return (~~(r * 299) + ~~(g * 587) + ~~(b * 114)) / 1000 >= 128
     ? "#34373b"
     : "#ffffff";
 };
@@ -68,11 +72,15 @@ interface ColorRowProps extends PropsWithChildren<any> {
 }
 
 const ColorRow: React.FC<ColorRowProps> = ({ name, hex }) => {
+  const [currentHex, setCurrentHex] = useState(hex);
+  // const [currentRgb, setCurrentRgb] = useState
+
   const rgb = hexToRgb(hex);
   const hsl = rgbToHsl(rgb[0], rgb[1], rgb[2]);
+  const fgColor = contrastingColor(hex, rgb[0], rgb[1], rgb[2]);
 
   const pStyle: any = {
-    color: contrastingColor(hex, rgb[0], rgb[1], rgb[2]),
+    color: fgColor,
   };
 
   const rgbInner = (
@@ -94,12 +102,12 @@ const ColorRow: React.FC<ColorRowProps> = ({ name, hex }) => {
   const nameInner = (
     <>
       <p style={pStyle}>{name}</p>
-      <p style={pStyle}>{hex}</p>
+      <p style={pStyle}>{currentHex}</p>
     </>
   );
 
   const trStyle: any = {
-    backgroundColor: hex
+    backgroundColor: currentHex,
   };
 
   // if (name == "500") {
@@ -107,32 +115,44 @@ const ColorRow: React.FC<ColorRowProps> = ({ name, hex }) => {
   //   trStyle.borderTop = "3px solid #fff";
   // }
 
-  //"25", "50", "100", "200", "300", "400", "500", "600", "700", "800", "900"
-  const renderTheseColors: string[] = [
-    "25",
-    "50",
-    "100",
-    "200",
-    "300",
-    "400",
-    "500",
-    "600",
-    "700",
-    "800",
-    "900",
-  ];
-
   return (
     <>
-      {renderTheseColors.includes(name) && (
-        <tr style={trStyle}>
-          <td style={{ textAlign: "center", padding: "20px 0", width: "80px" }}>
-            {nameInner}
-          </td>
-          <td style={{ padding: "20px 0", width: "50px" }}>{hslInner}</td>
-          <td style={{ padding: "20px 0", width: "50px" }}>{rgbInner}</td>
-        </tr>
-      )}
+      <tr style={trStyle}>
+        <td style={{ padding: "20px 5px 20px 10px", width: "60px" }}>
+          {hslInner}
+        </td>
+        <td style={{ padding: "20px 10px 20px 5px", width: "60px" }}>
+          {rgbInner}
+        </td>
+        <td style={{ textAlign: "center", padding: "10px", width: "60px" }}>
+          {nameInner}
+          <div
+            style={{
+              display: "flex",
+              gap: "5px",
+              marginTop: "10px",
+              justifyContent: "center",
+            }}
+          >
+            <RosariumIcon
+              name="copy"
+              size="15px"
+              color={fgColor}
+              onClick={() => {
+                navigator.clipboard.writeText(currentHex);
+                alert(`Copied ${currentHex} icon name to clipboard~`);
+              }}
+            />
+            <PopoverPicker
+              color={currentHex}
+              onChange={(hex) => {
+                setCurrentHex(hex);
+              }}
+              fgColor={fgColor}
+            />
+          </div>
+        </td>
+      </tr>
     </>
   );
 };

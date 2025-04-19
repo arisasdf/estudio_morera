@@ -32,6 +32,7 @@ const I18N = (() => {
     values: flattenObject(LOCALES[USER_LANGUAGE], ""),
   });
 
+  // TODO: pass an object to i18n to use formatting
   return (key: string) => i18n(key.replace(/\./g, "_"));
 })();
 

@@ -9,14 +9,28 @@
   background-size: cover;
 
   main {
+    margin: auto;
+  }
+
+  .rosarium-card--translucent {
     @include rosarium.flex-col;
     gap: rosarium.$distance-m;
-    width: 350px;
-    margin: auto;
     align-items: center;
+    width: 400px;
 
     .rosarium-input--large {
       align-self: stretch;
+    }
+  }
+
+  // TODO: make footer generic?
+  footer {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background-color: var(--tinctus-primary-800);
+    span, a {
+      color: var(--tinctus-primary-200);
     }
   }
 }

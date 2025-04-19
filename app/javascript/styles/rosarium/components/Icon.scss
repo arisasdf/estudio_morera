@@ -16,8 +16,8 @@ span[class^="rosarium-icon"] {
 }
 
 // #icons-list
-$icons: "close", "done", "eye-hide", "eye-show", "heart", "home", "search",
-  "settings", "star";
+$icons: "adjust", "close", "copy", "done", "eye-hide", "eye-show", "heart",
+  "home", "search", "settings", "star";
 
 @each $icon-name in $icons {
   @include rosarium-icon($icon-name);

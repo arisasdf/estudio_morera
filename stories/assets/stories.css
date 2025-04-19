@@ -28,3 +28,18 @@ body {
 .rosarium--showcase-grid-single {
   max-width: 600px;
 }
+
+.picker-popover {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  z-index: 1000;
+  border: 1px solid var(--tinctus-gray-300);
+  padding: 10px;
+  background: var(--tinctus-gray-50);
+  border-radius: 10px;
+}
+
+.color-tables span[class^="rosarium-icon"] {
+  cursor: pointer;
+}
