@@ -52,8 +52,27 @@ export const Icons: Story = {
       ];
 
       return iconNames.map((iconName) => (
-        <RosariumIcon name={iconName} size="60px" />
-      ))
+        <>
+          <RosariumIcon
+            name={iconName}
+            size="60px"
+            onClick={() => {
+              navigator.clipboard.writeText(iconName);
+              alert(`Copied ${iconName} icon name to clipboard~`);
+            }}
+          />
+          <p
+            style={{
+              fontFamily: "monospace",
+              textAlign: "center",
+              color: "#666",
+              fontSize: "12px",
+            }}
+          >
+            {iconName}
+          </p>
+        </>
+      ));
     })(),
   },
 };
