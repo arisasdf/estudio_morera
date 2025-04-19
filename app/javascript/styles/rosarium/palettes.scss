@@ -1,23 +1,23 @@
 // ROSULA
-// TODO: Rosula and Sanguis have too big of a skip between 400 - 300
 $rosula: (
   "25": "#fbf4f8",
-  "50": "#f9eaf2",
-  "100": "#f1c6dd",
-  "200": "#e9a5c8",
-  "300": "#e185b2",
-  "400": "#c4457a",
+  "50": "#f7dfec",
+  "100": "#eabdd5",
+  "200": "#e19bbf",
+  "300": "#d771a3",
+  "400": "#c65282",
   "500": "#a6305d",
   "600": "#892b4e",
   "700": "#6e213e",
   "800": "#5b1a31",
   "900": "#451224",
-);
+  );
 
 
-// SANGUIS
-// TODO: needs to be more red IMHO
-$sanguis: (
+  // SANGUIS
+  // TODO: needs to be more red IMHO
+  // TODO: too big of a skip between 400 - 300
+  $sanguis: (
   "25": "#fdf7f7",
   "50": "#f6eaeb",
   "100": "#e8d4d6",

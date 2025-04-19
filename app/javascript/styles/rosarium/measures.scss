@@ -14,10 +14,11 @@ $font-size-m: 1em;
 $font-size-l: 1.1em;
 $font-size-xl: 1.2em;
 
+$line-height: 1.4em;
 
-$font-size-hero: 5em;
+$font-size-hero: 5.5em;
 $font-size-p: $font-size-m;
-$line-height-p: $font-size-l;
+$line-height-p: $line-height;
 
 $font-size-headings:
   (

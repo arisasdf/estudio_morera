@@ -67,7 +67,7 @@ $variants: "primary", "secondary";
 .rosarium-button--primary {
   @include rosarium-button-filled(
     $main-color: var(--tinctus-primary-500),
-    $hover-color: var(--tinctus-primary-600),
+    $hover-color: var(--tinctus-primary-700),
     $active-color: var(--tinctus-primary-800)
   );
 }

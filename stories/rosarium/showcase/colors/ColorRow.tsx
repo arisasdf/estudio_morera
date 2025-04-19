@@ -102,10 +102,10 @@ const ColorRow: React.FC<ColorRowProps> = ({ name, hex }) => {
     backgroundColor: hex
   };
 
-  if (name == "500") {
-    trStyle.borderBottom = "3px solid #fff";
-    trStyle.borderTop = "3px solid #fff";
-  }
+  // if (name == "500") {
+  //   trStyle.borderBottom = "3px solid #fff";
+  //   trStyle.borderTop = "3px solid #fff";
+  // }
 
   //"25", "50", "100", "200", "300", "400", "500", "600", "700", "800", "900"
   const renderTheseColors: string[] = [
