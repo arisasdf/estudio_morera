@@ -1,11 +1,10 @@
 import React, { PropsWithChildren } from "react";
-import SPALayout from "./SPALayout";
 
 import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
-import { withApolloProvider } from "../graphqlProvider";
+import { withApolloProvider } from "@javascript/graphqlProvider";
 import { RosariumH1 } from "@rosarium/RosariumHeading";
-import I18N from "../i18n/i18n";
+import I18N from "@javascript/i18n/I18N";
 import RosariumCard from "@rosarium/RosariumCard";
 
 const worksQuery = gql`
@@ -34,7 +33,7 @@ export const Works: React.FC = () => {
   const { data, loading, error } = useQuery(worksQuery);
 
   return (
-    <SPALayout>
+    <>
       {loading && <p>Loading...</p>}
 
       {error && (
@@ -54,7 +53,7 @@ export const Works: React.FC = () => {
           ))}
         </>
       )}
-    </SPALayout>
+    </>
   );
 };
 

@@ -11,6 +11,7 @@ const webpackConfig = generateWebpackConfig({
   resolve: {
     extensions: [".ts", ".js", ".tsx", ".jsx"],
     alias: {
+      "@javascript": path.resolve(__dirname, "../../", 'app/javascript/'),
       "@rosarium": path.resolve(__dirname, "../../", 'app/javascript/components/rosarium/'),
       "@components": path.resolve(__dirname, "../../", 'app/javascript/components/'),
     },

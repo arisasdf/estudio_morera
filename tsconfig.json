@@ -13,6 +13,7 @@
     "noEmit": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
+      "@javascript/*": ["app/javascript/*"],
       "@rosarium/*": ["app/javascript/components/rosarium/*"],
       "@components/*": ["app/javascript/components/*"],
       // "@i18n": ["app/javascript/i18n/i18n"],

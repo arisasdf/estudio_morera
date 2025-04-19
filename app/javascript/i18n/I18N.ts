@@ -2,7 +2,6 @@ import i18n from "roddeh-i18n";
 
 import en from "./locales/en";
 import es from "./locales/es";
-import { forOwn } from "lodash";
 
 // TODO: eventually get the language from the user I guess?
 const USER_LANGUAGE = "es";

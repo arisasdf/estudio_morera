@@ -4,7 +4,7 @@ import RosariumInput from "@rosarium/RosariumInput";
 import RosariumCard from "@rosarium/RosariumCard";
 import RosariumButton from "@rosarium/RosariumButton";
 import RosariumLogoPlaceholder from "@rosarium/RosariumLogoPlaceholder";
-import I18N from "../i18n/i18n";
+import I18N from "@javascript/i18n/I18N";
 
 export const Login: React.FC = () => {
   const [emailVal, setEmailVal] = useState("");

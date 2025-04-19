@@ -21,6 +21,11 @@ export default {
 
   // Works page
   works: {
-    heading: "Works"
+    heading: "Obras"
+  },
+
+  // Students page
+  students: {
+    heading: "Estudiantes"
   }
 }

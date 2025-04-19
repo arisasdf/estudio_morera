@@ -1,18 +1,18 @@
 import RosariumLogoPlaceholder from "@rosarium/RosariumLogoPlaceholder";
 import React, { PropsWithChildren } from "react";
-import { Link, useLocation } from "react-router";
-import I18N from "../i18n/i18n";
+import { Link, Outlet, useLocation } from "react-router";
+import I18N from "@javascript/i18n/I18N";
 
-// TODO: get current page from router
-// TODO: Actually style it lol
-
-export const SPALayout: React.FC<PropsWithChildren> = ({ children }) => {
+export const App: React.FC<PropsWithChildren> = ({ children }) => {
   const location = useLocation();
 
   return (
     <div className="spa-body">
+      {/* TODO: sidebar component */}
       <nav>
-        <RosariumLogoPlaceholder width={150} height={50} />
+        <Link to="/">
+          <RosariumLogoPlaceholder width={150} height={50} />
+        </Link>
         <ul
           style={{
             display: "flex",
@@ -35,8 +35,7 @@ export const SPALayout: React.FC<PropsWithChildren> = ({ children }) => {
                   : "transparent",
             }}
           >
-            {" "}
-            🎼 {I18N("nav.works")}
+            <Link style={{cursor: "pointer"}} to="/app/works">🎼 {I18N("nav.works")}</Link>
           </li>
           <li
             style={{
@@ -48,7 +47,7 @@ export const SPALayout: React.FC<PropsWithChildren> = ({ children }) => {
                   : "transparent",
             }}
           >
-            🧑‍🎓 {I18N("nav.students")}
+            <Link style={{cursor: "pointer"}} to="/app/students">🧑‍🎓 {I18N("nav.students")}</Link>
           </li>
           <li
             style={{
@@ -64,9 +63,9 @@ export const SPALayout: React.FC<PropsWithChildren> = ({ children }) => {
           </li>
         </ul>
       </nav>
-      <main>{children}</main>
+      <main><Outlet /></main>
     </div>
   );
 };
 
-export default SPALayout;
+export default App;
