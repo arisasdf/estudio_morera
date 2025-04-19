@@ -17,6 +17,7 @@ const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
   return (
     <>
       <RosariumH3 className="rosarium--showcase-heading">{title}</RosariumH3>
+
       <table className={`rosarium--showcase-grid ${columns == 1 ? "rosarium--showcase-grid-single" : ""}`}>
         <tbody>
           {childrenRows.map((row, rIndex) => (

@@ -16,8 +16,8 @@ body {
   }
 
   span[class^="rosarium-icon"] {
-    background-color: var(--tinctus-primary-800);
-    cursor: crosshair;
+    background-color: var(--tinctus-primary-600);
+    cursor: pointer;
 
     &:hover {
       background-color: var(--tinctus-primary-400);

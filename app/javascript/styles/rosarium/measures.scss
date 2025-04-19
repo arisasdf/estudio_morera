@@ -5,22 +5,26 @@ $distance-m: 16px;
 $distance-l: 20px;
 $distance-xl: 24px;
 $distance-xxl: 28px;
-$distance-broad: 36px;
 
-$font-size-xs: 12px;
-$font-size-s: 14px;
-$font-size-m: 16px;
-$font-size-l: 18px;
-$font-size-xl: 20px;
+$font-size-base: 16px;
 
-$font-size-hero: 90px;
+$font-size-xs: .8em;
+$font-size-s: .9em;
+$font-size-m: 1em;
+$font-size-l: 1.1em;
+$font-size-xl: 1.2em;
+
+
+$font-size-hero: 5em;
+$font-size-p: $font-size-m;
+$line-height-p: $font-size-l;
 
 $font-size-headings:
   (
-    1: 40px,
-    2: 34px,
-    3: 28px,
-    4: 22px, /* kinda small */
+    1: 2.5em,
+    2: 2em,
+    3: 1.5em,
+    4: 1.2em,
   );
 
 $radius-s: 4px;
