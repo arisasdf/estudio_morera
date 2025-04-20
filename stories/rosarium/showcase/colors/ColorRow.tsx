@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useState } from "react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 import { PopoverPicker } from "./PopoverPicker";
 import RosariumIcon from "@javascript/components/rosarium/RosariumIcon";
 
@@ -7,9 +7,9 @@ import RosariumIcon from "@javascript/components/rosarium/RosariumIcon";
 
 const hexToRgb = (hex: string): number[] => {
   // Grab the hex representation of each color (pair) and convert to decimal (base 10).
-  const r = parseInt(hex.substr(1, 2), 16);
-  const g = parseInt(hex.substr(3, 2), 16);
-  const b = parseInt(hex.substr(5, 2), 16);
+  const r = parseInt(hex.substring(1, 3), 16);
+  const g = parseInt(hex.substring(3, 5), 16);
+  const b = parseInt(hex.substring(5, 7), 16);
 
   return [r, g, b];
 };
@@ -45,10 +45,7 @@ const rgbToHsl = (r: number, g: number, b: number): number[] => {
 };
 
 const contrastingColor = (
-  hex: string,
-  r0: number,
-  g0: number,
-  b0: number
+  hex: string
 ): string => {
   let [r, g, b, a] = hex
     .replace(
@@ -73,11 +70,19 @@ interface ColorRowProps extends PropsWithChildren<any> {
 
 const ColorRow: React.FC<ColorRowProps> = ({ name, hex }) => {
   const [currentHex, setCurrentHex] = useState(hex);
-  // const [currentRgb, setCurrentRgb] = useState
+  const [currentRgb, setCurrentRgb] = useState(hexToRgb(hex));
+  const [currentHsl, setCurrentHsl] = useState([0, 0, 0]);
+  const [fgColor, setFgColor] = useState("#ffffff");
 
-  const rgb = hexToRgb(hex);
-  const hsl = rgbToHsl(rgb[0], rgb[1], rgb[2]);
-  const fgColor = contrastingColor(hex, rgb[0], rgb[1], rgb[2]);
+  useEffect(() => {
+    const rgb = hexToRgb(currentHex);
+    setCurrentRgb(rgb);
+    setCurrentHsl(rgbToHsl(rgb[0], rgb[1], rgb[2]));
+    setFgColor(
+      contrastingColor(currentHex)
+    );
+    // setFgColor(currentHex);
+  }, [currentHex]);
 
   const pStyle: any = {
     color: fgColor,
@@ -85,24 +90,31 @@ const ColorRow: React.FC<ColorRowProps> = ({ name, hex }) => {
 
   const rgbInner = (
     <>
-      <p style={pStyle}>R: {rgb[0]}</p>
-      <p style={pStyle}>G: {rgb[1]}</p>
-      <p style={pStyle}>B: {rgb[2]}</p>
+      <p style={pStyle}>R: {currentRgb[0]}</p>
+      <p style={pStyle}>G: {currentRgb[1]}</p>
+      <p style={pStyle}>B: {currentRgb[2]}</p>
     </>
   );
 
   const hslInner = (
     <>
-      <p style={pStyle}>H: {Math.round(hsl[0] * 360)}</p>
-      <p style={pStyle}>S: {Math.round(hsl[1] * 100)}%</p>
-      <p style={pStyle}>L: {Math.round(hsl[2] * 100)}%</p>
+      <p style={pStyle}>H: {Math.round(currentHsl[0] * 360)}</p>
+      <p style={pStyle}>S: {Math.round(currentHsl[1] * 100)}%</p>
+      <p style={pStyle}>L: {Math.round(currentHsl[2] * 100)}%</p>
     </>
   );
 
   const nameInner = (
     <>
       <p style={pStyle}>{name}</p>
-      <p style={pStyle}>{currentHex}</p>
+      <input style={{
+        color: fgColor,
+        height: "14px",
+        fontSize: "12px",
+        backgroundColor: "transparent",
+        textAlign: "center",
+        width: "100%",
+      }} value={currentHex} onChange={(i) => {setCurrentHex(i.target.value)}}></input>
     </>
   );
 
@@ -110,21 +122,16 @@ const ColorRow: React.FC<ColorRowProps> = ({ name, hex }) => {
     backgroundColor: currentHex,
   };
 
-  // if (name == "500") {
-  //   trStyle.borderBottom = "3px solid #fff";
-  //   trStyle.borderTop = "3px solid #fff";
-  // }
-
   return (
     <>
       <tr style={trStyle}>
-        <td style={{ padding: "20px 5px 20px 10px", width: "60px" }}>
+        <td style={{ padding: "20px 5px 20px 10px", width: "70px" }}>
           {hslInner}
         </td>
         <td style={{ padding: "20px 10px 20px 5px", width: "60px" }}>
           {rgbInner}
         </td>
-        <td style={{ textAlign: "center", padding: "10px", width: "60px" }}>
+        <td style={{ textAlign: "center", padding: "10px", width: "80px" }}>
           {nameInner}
           <div
             style={{
@@ -134,18 +141,9 @@ const ColorRow: React.FC<ColorRowProps> = ({ name, hex }) => {
               justifyContent: "center",
             }}
           >
-            <RosariumIcon
-              name="copy"
-              size="15px"
-              color={fgColor}
-              onClick={() => {
-                navigator.clipboard.writeText(currentHex);
-                alert(`Copied ${currentHex} icon name to clipboard~`);
-              }}
-            />
             <PopoverPicker
               color={currentHex}
-              onChange={(hex) => {
+              onChange={(hex: string) => {
                 setCurrentHex(hex);
               }}
               fgColor={fgColor}

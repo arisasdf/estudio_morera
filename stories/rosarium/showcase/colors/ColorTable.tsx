@@ -1,51 +1,57 @@
 import React, { PropsWithChildren } from "react";
 import ColorRow from "./ColorRow";
-import PALETTES from "./palettes";
 import { upperCase } from "lodash";
 
-const ColorTable: React.FC<PropsWithChildren> = () => {
+interface ColorTableProps extends PropsWithChildren<any> {
+  palettes: { [key: string]: { [key: string]: string } };
+}
+
+const ColorTable: React.FC<ColorTableProps> = ({ palettes = {} }) => {
   const colorTableCss = `
     table td p { font-size: 12px; }
   `;
 
   const renderTheseColors: string[] = [
-    // "25",
-    // "50",
-    // "100",
-    // "200",
-    // "300",
+    "25",
+    "50",
+    "100",
+    "200",
+    "300",
     "400",
     "500",
     "600",
-    // "700",
-    // "800",
-    // "900",
+    "700",
+    "800",
+    "900",
   ];
 
   return (
-    <div className="color-tables" style={{ display: "flex", flexDirection: "row" }}>
+    <div
+      className="color-tables"
+      style={{ display: "flex", flexDirection: "row" }}
+    >
       <style>{colorTableCss}</style>
-      {Object.keys(PALETTES).map((paletteName) => (
+      {Object.keys(palettes).map((paletteName) => (
         <div key={paletteName}>
           <p
             style={{
               textAlign: "center",
               fontSize: "22px",
               marginBottom: "15px",
-              color: PALETTES[paletteName]["500"],
+              color: palettes[paletteName]["500"],
             }}
           >
             {upperCase(paletteName)}
           </p>
           <table>
             <tbody>
-              {Object.keys(PALETTES[paletteName]).map(
+              {Object.keys(palettes[paletteName]).map(
                 (colorName) =>
                   renderTheseColors.includes(colorName) && (
                     <ColorRow
                       key={colorName}
                       name={colorName}
-                      hex={PALETTES[paletteName][colorName]}
+                      hex={palettes[paletteName][colorName]}
                     />
                   )
               )}

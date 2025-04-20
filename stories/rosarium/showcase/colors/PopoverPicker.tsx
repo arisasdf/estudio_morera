@@ -1,3 +1,5 @@
+// Adapted from https://www.npmjs.com/package/react-colorful#code-recipes
+
 import RosariumIcon from "@javascript/components/rosarium/RosariumIcon";
 import React, { useCallback, useRef, useState } from "react";
 import { HexColorPicker } from "react-colorful";

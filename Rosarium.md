@@ -11,6 +11,8 @@ I'm a whimsy little girl so I've chosen to create a "design system" and Gemini h
 
 Here's a smattering of notes but hopefully I can make a Storybook eventually.
 
+**Edit:** Storybook built. Keeping this for nostalgia and/or cringe purposes.
+
 ## Palettes
 
 Palettes generated with [Significa's palette generator](https://palette-generator.significa.co/?c=0D734C&s=10&cs=0.1&cm=0)

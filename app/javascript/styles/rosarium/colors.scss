@@ -56,6 +56,58 @@
   // Containers
   --color-global-bg: var(--tinctus-gray-50);
   --color-container-bg: var(--tinctus-gray-50);
+
+  // State - Error
+  --tinctus-error-25: #fdf7f7;
+  --tinctus-error-50: #ffd4cc;
+  --tinctus-error-100: #ffab9e;
+  --tinctus-error-200: #fc816f;
+  --tinctus-error-300: #eb614b;
+  --tinctus-error-400: #de3c23;
+  --tinctus-error-500: #c4260a;
+  --tinctus-error-600: #a3170b;
+  --tinctus-error-700: #7d0d02;
+  --tinctus-error-800: #580000;
+  --tinctus-error-900: #390000;
+
+  // State - Warning
+  --tinctus-warning-25: #fff6ee;
+  --tinctus-warning-50: #fddfc5;
+  --tinctus-warning-100: #ffcb9d;
+  --tinctus-warning-200: #f3984e;
+  --tinctus-warning-300: #e78332;
+  --tinctus-warning-400: #de7015;
+  --tinctus-warning-500: #cf5d00;
+  --tinctus-warning-600: #924709;
+  --tinctus-warning-700: #683307;
+  --tinctus-warning-800: #442408;
+  --tinctus-warning-900: #2e1a08;
+
+  // State - Success
+  --tinctus-success-25: #f2f8f6;
+  --tinctus-success-50: #daece6;
+  --tinctus-success-100: #9eddc9;
+  --tinctus-success-200: #6ec8ac;
+  --tinctus-success-300: #44b390;
+  --tinctus-success-400: #268265;
+  --tinctus-success-500: #136c50;
+  --tinctus-success-600: #015b45;
+  --tinctus-success-700: #014c3a;
+  --tinctus-success-800: #013c2d;
+  --tinctus-success-900: #012d22;
+
+  // State - Info
+  --tinctus-info-25: #f5f8ff;
+  --tinctus-info-50: #e0e8fc;
+  --tinctus-info-100: #b0c4ee;
+  --tinctus-info-200: #8aa8e8;
+  --tinctus-info-300: #4d76d0;
+  --tinctus-info-400: #2d5cc2;
+  --tinctus-info-500: #1745a6;
+  --tinctus-info-600: #103483;
+  --tinctus-info-700: #102c6a;
+  --tinctus-info-800: #10214a;
+  --tinctus-info-900: #0c1833;
 }
 
 
