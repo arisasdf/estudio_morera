@@ -1,7 +1,3 @@
-// https://fonts.google.com/icons?selected=Material+Symbols+Outlined:visibility:FILL@0;wght@500;GRAD@0;opsz@24&icon.size=24&icon.color=%231f1f1f&icon.style=Outlined&icon.set=Material+Symbols
-
-// weight 500, grade 200, optical size 24, material symbols, rounded
-
 import React, { PropsWithChildren } from "react";
 
 interface IconProps extends PropsWithChildren<any> {

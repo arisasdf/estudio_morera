@@ -21,10 +21,9 @@ export const App: React.FC<PropsWithChildren> = ({ children }) => {
             alignItems: "stretch",
           }}
         >
-          {/* TODO: Add router links */}
           {/* TODO: loop lol */}
           {/* TODO: cssplease */}
-          {/* TODO: check the shape of location.pathname */}
+          {/* TODO: change your dumb pathname logic with NavLink */}
           <li
             style={{
               padding: "12px 20px",

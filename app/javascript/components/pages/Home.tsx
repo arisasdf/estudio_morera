@@ -12,7 +12,7 @@ export const Home: React.FC = () => {
           <li style={{margin: "10px 0 0 10px"}}><Link to="/login" className="rosarium-link">Login</Link></li>
           <li style={{margin: "10px 0 0 10px"}}><Link to="/app/works" className="rosarium-link">Works</Link></li>
         </ul>
-        <p>Remember to delete this dude when you're done.</p>
+        <p>Remember to delete this dude when you're done (and point the route to Login, or maybe add a landing page).</p>
       </RosariumCard>
     </div>
   );

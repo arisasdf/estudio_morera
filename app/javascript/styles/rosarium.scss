@@ -1,7 +1,7 @@
 @use "rosarium/measures.scss";
 
 /* Meyer's Reset */
-@forward "rosarium/reset.scss";
+@use "rosarium/reset.scss";
 
 /* Variables and common styles */
 @forward "rosarium/measures.scss";
@@ -10,8 +10,8 @@
 @forward "rosarium/utilities.scss";
 
 /* Components */
-@forward "rosarium/components/Input.scss";
-@forward "rosarium/components/Button.scss";
-@forward "rosarium/components/Card.scss";
-@forward "rosarium/components/Heading.scss";
-@forward "rosarium/components/Icon.scss";
+@use "rosarium/components/Input.scss";
+@use "rosarium/components/Button.scss";
+@use "rosarium/components/Card.scss";
+@use "rosarium/components/Heading.scss";
+@use "rosarium/components/Icon.scss";

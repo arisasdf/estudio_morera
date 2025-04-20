@@ -19,6 +19,7 @@ interface InputProps extends PropsWithChildren<any> {
   onSubmit?: () => void;
   id?: string;
   ignoreLabelEnforcement?: boolean;
+  variant?: "active" | "error" | "locked";
 }
 
 export const RosariumInput: React.FC<InputProps> = ({
@@ -32,6 +33,7 @@ export const RosariumInput: React.FC<InputProps> = ({
   // UI props
   type = "text",
   size = "medium",
+  variant = "active",
 
   // Input and Submit
   onInput = () => {},
@@ -98,7 +100,16 @@ export const RosariumInput: React.FC<InputProps> = ({
     outerLabel = labelElement("outer");
   }
 
+  let leadingElement: JSX.Element = <></>;
+
+  if (variant === "error") {
+    leadingElement = (
+      <RosariumIcon name="error" />
+    )
+  }
+
   // Trailing element
+  // TODO: consider receiving something else as trailing element
   let trailingElement: JSX.Element = <></>;
 
   if (type == "password") {
@@ -118,9 +129,10 @@ export const RosariumInput: React.FC<InputProps> = ({
 
   // Final render
   return (
-    <div className={`rosarium-input--${size}`}>
+    <div className={`rosarium-input--${size} rosarium-input--${variant}`}>
       {outerLabel}
       <div className="rosarium-input-wrapper" onClick={() => { inputRef.current.focus(); }}>
+        {leadingElement}
         {innerLabel}
         <input
           ref={inputRef}

@@ -40,8 +40,10 @@ export const Icons: Story = {
     children: (() => {
       // #icons-list
       const iconNames = [
+        "adjust",
         "close",
-        "done",
+        "copy",
+        "error",
         "eye-hide",
         "eye-show",
         "heart",
