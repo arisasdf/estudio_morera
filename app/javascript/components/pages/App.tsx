@@ -10,7 +10,7 @@ export const App: React.FC<PropsWithChildren> = ({ children }) => {
     <div className="spa-body">
       {/* TODO: sidebar component */}
       <nav>
-        <Link to="/">
+        <Link to="/app">
           <RosariumLogoPlaceholder width={150} height={50} />
         </Link>
         <ul
@@ -34,7 +34,7 @@ export const App: React.FC<PropsWithChildren> = ({ children }) => {
                   : "transparent",
             }}
           >
-            <Link style={{cursor: "pointer"}} to="/app/works">🎼 {I18N("nav.works")}</Link>
+            <Link to="/app/works">🎼 {I18N("works.title")}</Link>
           </li>
           <li
             style={{
@@ -46,7 +46,7 @@ export const App: React.FC<PropsWithChildren> = ({ children }) => {
                   : "transparent",
             }}
           >
-            <Link style={{cursor: "pointer"}} to="/app/students">🧑‍🎓 {I18N("nav.students")}</Link>
+            <Link to="/app/students">🧑‍🎓 {I18N("students.title")}</Link>
           </li>
           <li
             style={{
@@ -58,8 +58,9 @@ export const App: React.FC<PropsWithChildren> = ({ children }) => {
                   : "transparent",
             }}
           >
-            🧑‍🏫 {I18N("nav.teachers")}
+            🧑‍🏫 {I18N("teachers.title")}
           </li>
+          <li><Link to="/login">{I18N("login.logout")}</Link></li>
         </ul>
       </nav>
       <main><Outlet /></main>

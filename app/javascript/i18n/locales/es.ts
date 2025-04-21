@@ -1,32 +1,37 @@
+// TODO: add tests to check all keys are present
+
 export default {
-  hello_world: "Hola mundo!",
   // Generic
   back: "Regresar",
   madeBy: "Hecho con ♡ por",
 
-  // Login page
-  login : {
-    heading: "Ingresar",
+  // Login
+  login: {
+    title: "Ingresar",
     email: "Correo",
     password: "Contraseña",
     cta: "Ingresar",
     recover: "Recuperar contraseña",
+    logout: "Cerrar sesión"
   },
 
-  // Navigation
-  nav: {
-    works: "Obras",
-    students: "Estudiantes",
-    teachers: "Educadores",
+  // Dashboard
+  dash: {
+    title: "Dash",
   },
 
-  // Works page
+  // Works
   works: {
-    heading: "Obras"
+    title: "Obras",
   },
 
-  // Students page
+  // Students
   students: {
-    heading: "Estudiantes"
-  }
-}
+    title: "Estudiantes",
+  },
+
+  // Teachers
+  teachers: {
+    title: "Profesores",
+  },
+};

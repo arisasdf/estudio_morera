@@ -2,6 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ColorTable from './colors/ColorTable';
 import { THEME_PALETTES, STATE_PALETTES } from './colors/palettes';
 
+// CHECK OUT THESE PALETTE GENERATORS
+// https://omatsuri.app/color-shades-generator
+// https://palette-generator.significa.co/
+
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Showcase/Colors',

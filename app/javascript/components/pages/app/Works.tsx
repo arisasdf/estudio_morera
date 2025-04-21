@@ -6,6 +6,7 @@ import { withApolloProvider } from "@javascript/graphqlProvider";
 import { RosariumH1 } from "@rosarium/RosariumHeading";
 import I18N from "@javascript/i18n/I18N";
 import RosariumCard from "@rosarium/RosariumCard";
+import { useDocumentTitle } from "usehooks-ts";
 
 const worksQuery = gql`
   query {
@@ -30,6 +31,8 @@ const Work: React.FC<WorkProps> = ({ title, composer }) => {
 };
 
 export const Works: React.FC = () => {
+  useDocumentTitle(`Estudio Morera - ${I18N("works.title")}`);
+
   const { data, loading, error } = useQuery(worksQuery);
 
   return (
@@ -45,7 +48,7 @@ export const Works: React.FC = () => {
 
       {!error && !loading && (
         <>
-          <RosariumH1>{I18N("works.heading")}</RosariumH1>
+          <RosariumH1>{I18N("works.title")}</RosariumH1>
           {data.allWorks.map((work) => (
             <RosariumCard>
                 <Work {...work} key={work.id} />

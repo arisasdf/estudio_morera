@@ -8,6 +8,7 @@ import Login from "@components/pages/Login";
 import App from "@components/pages/App";
 import Works from "@components/pages/app/Works";
 import Students from "@javascript/components/pages/app/Students";
+import Dashboard from "@javascript/components/pages/app/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
     path: "/app",
     Component: App,
     children: [
+      { index: true, Component: Dashboard },
       { path: "works", Component: Works },
       { path: "students", Component: Students }
     ],

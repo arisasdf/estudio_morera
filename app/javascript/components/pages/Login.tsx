@@ -18,12 +18,12 @@ export const Login: React.FC = () => {
   const [inputErrors, setInputErrors] = useState([]);
 
   const onEmailInput = (value: string): void => {
-    setInputErrors(inputErrors.filter(a => a !== EMAIL_INPUT_ID));
+    setInputErrors(inputErrors.filter((a) => a !== EMAIL_INPUT_ID));
     setEmailVal(value);
   };
 
   const onPasswordInput = (value: string): void => {
-    setInputErrors(inputErrors.filter(a => a !== PASSWORD_INPUT_ID));
+    setInputErrors(inputErrors.filter((a) => a !== PASSWORD_INPUT_ID));
     setPasswordVal(value);
   };
 
@@ -43,7 +43,7 @@ export const Login: React.FC = () => {
 
     if (loginErrors.length !== 0) return;
 
-    navigate("/app/dashboard");
+    navigate("/app");
   };
 
   const onRecoverClick = (): void => {
@@ -57,9 +57,8 @@ export const Login: React.FC = () => {
 
     if (pwRecErrors.length !== 0) return;
 
-    if (confirm(`Sent recovery email to ${emailVal}.`)) {
-      navigate("/app/dashboard");
-    }
+    alert(`Sent recovery email to ${emailVal}.`);
+    setRecover(false);
   };
 
   return (
@@ -88,7 +87,9 @@ export const Login: React.FC = () => {
                 id={PASSWORD_INPUT_ID}
                 placeholder={I18N("login.password")}
                 size="large"
-                variant={inputErrors.includes(PASSWORD_INPUT_ID) ? "error" : "active"}
+                variant={
+                  inputErrors.includes(PASSWORD_INPUT_ID) ? "error" : "active"
+                }
                 type="password"
                 value={passwordVal}
                 onInput={onPasswordInput}
