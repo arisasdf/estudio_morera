@@ -15,6 +15,7 @@ interface InputProps extends PropsWithChildren<any> {
   placeholder?: string;
   type?: "text" | "password";
   value?: string;
+  onFocus?: () => void;
   onInput?: (arg0: string) => void;
   onSubmit?: () => void;
   id?: string;
@@ -35,7 +36,8 @@ export const RosariumInput: React.FC<InputProps> = ({
   size = "medium",
   variant = "active",
 
-  // Input and Submit
+  // Callbacks
+  onFocus = () => {},
   onInput = () => {},
   onSubmit = () => {},
 
@@ -46,7 +48,7 @@ export const RosariumInput: React.FC<InputProps> = ({
   const [passwordVisibility, setPasswordVisibility] = useState(false);
   const inputRef = useRef(null);
 
-  // Input and submit
+  // Callbacks
   const onNativeInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
     onInput(e.target.value);
   };
@@ -138,6 +140,7 @@ export const RosariumInput: React.FC<InputProps> = ({
           ref={inputRef}
           onInput={onNativeInput}
           onKeyUp={onKeyUp}
+          onFocus={onFocus}
           placeholder={placeholderText}
           type={type == "password" && !passwordVisibility ? "password" : "text"}
           value={value}

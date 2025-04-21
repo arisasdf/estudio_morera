@@ -5,6 +5,9 @@ import RosariumButton from "@rosarium/RosariumButton";
 import I18N from "@javascript/i18n/I18N";
 import { useNavigate } from "react-router";
 
+const EMAIL_INPUT_ID = "username-input";
+const PASSWORD_INPUT_ID = "password-input";
+
 export const Login: React.FC = () => {
   let navigate = useNavigate();
 
@@ -12,24 +15,47 @@ export const Login: React.FC = () => {
   const [passwordVal, setPasswordVal] = useState("");
   const [showRecover, setRecover] = useState(false);
 
+  const [inputErrors, setInputErrors] = useState([]);
+
   const onEmailInput = (value: string): void => {
+    setInputErrors(inputErrors.filter(a => a !== EMAIL_INPUT_ID));
     setEmailVal(value);
   };
 
   const onPasswordInput = (value: string): void => {
+    setInputErrors(inputErrors.filter(a => a !== PASSWORD_INPUT_ID));
     setPasswordVal(value);
   };
 
+  // TODO: There's gotta be a better way to handle validation lol
   const onLoginClick = (): void => {
-    // TODO: Set error
-    if (!emailVal || !passwordVal) return;
+    const loginErrors = [];
+
+    if (!emailVal) {
+      loginErrors.push(EMAIL_INPUT_ID);
+    }
+
+    if (!passwordVal) {
+      loginErrors.push(PASSWORD_INPUT_ID);
+    }
+
+    setInputErrors(loginErrors);
+
+    if (loginErrors.length !== 0) return;
 
     navigate("/app/dashboard");
   };
 
   const onRecoverClick = (): void => {
-    // TODO: Set error
-    if (!emailVal) return;
+    const pwRecErrors = [];
+
+    if (!emailVal) {
+      pwRecErrors.push(EMAIL_INPUT_ID);
+    }
+
+    setInputErrors(pwRecErrors);
+
+    if (pwRecErrors.length !== 0) return;
 
     if (confirm(`Sent recovery email to ${emailVal}.`)) {
       navigate("/app/dashboard");
@@ -41,9 +67,10 @@ export const Login: React.FC = () => {
       <main>
         <RosariumCard translucent>
           <RosariumInput
-            id="login-email"
+            id={EMAIL_INPUT_ID}
             placeholder={I18N("login.email")}
             size="large"
+            variant={inputErrors.includes(EMAIL_INPUT_ID) ? "error" : "active"}
             value={emailVal}
             onInput={onEmailInput}
             ignoreLabelEnforcement
@@ -58,9 +85,10 @@ export const Login: React.FC = () => {
           ) : (
             <>
               <RosariumInput
-                id="login-password"
+                id={PASSWORD_INPUT_ID}
                 placeholder={I18N("login.password")}
                 size="large"
+                variant={inputErrors.includes(PASSWORD_INPUT_ID) ? "error" : "active"}
                 type="password"
                 value={passwordVal}
                 onInput={onPasswordInput}
