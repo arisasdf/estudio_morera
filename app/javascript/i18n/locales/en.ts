@@ -5,6 +5,11 @@ export default {
   back: "Back",
   madeBy: "Made with ♡ by",
 
+  // Actions
+  actions: {
+    add: "Add",
+  },
+
   // Login
   login: {
     title: "Log In",

@@ -3,7 +3,6 @@ import Rosarium from "../../rosarium/Rosarium";
 import RosariumIcon from "./RosariumIcon";
 
 // TODO ideas:
-// - clear button
 // - button to see password on password types
 
 const ERROR_LABEL: string = "[YA BASIC]";

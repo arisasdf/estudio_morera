@@ -66,9 +66,9 @@ $variants: "primary", "secondary";
 
 .rosarium-button--primary {
   @include rosarium-button-filled(
-    $main-color: var(--tinctus-primary-500),
-    $hover-color: var(--tinctus-primary-700),
-    $active-color: var(--tinctus-primary-800)
+    $main-color: var(--tinctus-primary-600),
+    $hover-color: var(--tinctus-primary-500),
+    $active-color: var(--tinctus-primary-700)
   );
 }
 
@@ -85,7 +85,7 @@ $variants: "primary", "secondary";
     $main-color: var(--tinctus-gray-300),
     $hover-color: var(--tinctus-gray-300),
     $active-color: var(--tinctus-gray-300),
-    $cursor: not-allowed // would be fun to have custom cursors
+    $cursor: not-allowed, // would be fun to have custom cursors
   );
 }
 

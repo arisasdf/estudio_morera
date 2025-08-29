@@ -3,13 +3,6 @@
 @use "../utilities.scss";
 @use "sass:map";
 
-
-/* TODO: woman get your shit together about variables */
-$input-border-thickness-small: 2px;
-$input-border-thickness-medium: 3px;
-$input-border-thickness-large: 3px;
-
-
 // BASE STYLES
 
 .rosarium-input-wrapper {
@@ -18,7 +11,7 @@ $input-border-thickness-large: 3px;
   position: relative;
 
   border-style: solid;
-  transition: background-color 0.3s ease;
+  border-width: measures.$border-width-s;
 
   // TODO: move to variants and change for locked
   cursor: text;
@@ -29,10 +22,6 @@ $input-border-thickness-large: 3px;
 
     &:focus {
       outline: none;
-
-      &::placeholder {
-        color: var(--tinctus-gray-600);
-      }
     }
 
     &::placeholder {
@@ -40,6 +29,7 @@ $input-border-thickness-large: 3px;
     }
   }
 
+  // TODO: refactor when adding clear button
   .rosarium-icon--eye-hide,
   .rosarium-icon--eye-show {
     cursor: pointer;
@@ -58,7 +48,7 @@ $sizes: (
     "h-padding": measures.$distance-s,
     "v-padding": measures.$distance-xs,
     "inner-gap": measures.$distance-xs,
-    "border-bottom-thickness": $input-border-thickness-small,
+    "border-radius": measures.$radius-s,
     "icon-size": measures.$distance-m,
   ),
 
@@ -70,7 +60,7 @@ $sizes: (
     "h-padding": measures.$distance-m,
     "v-padding": measures.$distance-s,
     "inner-gap": measures.$distance-s,
-    "border-bottom-thickness": $input-border-thickness-medium,
+    "border-radius": measures.$radius-m,
     "icon-size": measures.$distance-l,
   ),
   "large": (
@@ -81,7 +71,7 @@ $sizes: (
     "h-padding": measures.$distance-m,
     "v-padding": measures.$distance-m,
     "inner-gap": measures.$distance-m,
-    "border-bottom-thickness": $input-border-thickness-large,
+    "border-radius": measures.$radius-l,
     "icon-size": measures.$distance-xl,
   ),
 );
@@ -91,21 +81,31 @@ $sizes: (
   .rosarium-input--#{$size} {
     @include utilities.flex-col;
 
+    // TODO: label on the side?
     .rosarium-input--outer-label {
       color: var(--tinctus-gray-700);
       font-size: map.get($values, "label-font-size");
-      padding: 0 0 0 measures.$distance-s;
       margin-bottom: map.get($values, "gap");
     }
 
     .rosarium-input-wrapper {
       padding: map.get($values, "v-padding") map.get($values, "h-padding");
-      // border-width: 1px 1px map.get($values, "border-bottom-thickness") 1px;
-      border-bottom-width: map.get($values, "border-bottom-thickness");
       gap: map.get($values, "h-padding");
+      border-radius: map.get($values, "border-radius");
 
       input {
         font-size: map.get($values, "input-font-size");
+      }
+
+      .rosarium-icon--error {
+        position: absolute;
+        left: -30px; // TODO: use correct distance according to size
+      }
+
+      &:focus-within {
+        border-color: var(--tinctus-primary-300);
+        outline-width: measures.$border-width-s;
+        outline-style: solid;
       }
     }
 
@@ -115,6 +115,57 @@ $sizes: (
     }
   }
 }
+
+// VARIANTS
+
+$variants: (
+  "active": (
+    "border": var(--tinctus-gray-200),
+    "border-focus": var(--tinctus-primary-300),
+    "icon": var(--tinctus-primary-600),
+    "icon-hover": var(--tinctus-primary-400),
+  ),
+  "error": (
+    "border": var(--tinctus-error-400),
+    "border-focus": var(--tinctus-error-500),
+    "icon": var(--tinctus-error-400),
+    "icon-hover": var(--tinctus-error-500),
+  )
+);
+
+@each $variant, $values in $variants {
+  .rosarium-input--#{$variant} {
+    span[class^="rosarium-icon"] {
+      background-color: map.get($values, "icon");
+    }
+
+    .rosarium-input-wrapper {
+      border-color: map.get($values, "border");
+
+      &:focus-within {
+        border-color: map.get($values, "border-focus");
+        outline-color: map.get($values, "border-focus");
+      }
+
+      .rosarium-icon--eye-hide:hover,
+      .rosarium-icon--eye-show:hover {
+        background-color: map.get($values, "icon-hover");
+      }
+    }
+  }
+}
+
+
+// Input Groups
+// TODO: sizes
+.rosarium-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: measures.$distance-m;
+  padding: measures.$distance-m 0;
+}
+
+// Inner label shenanigans
 
 .rosarium-input--large {
   .rosarium-input-wrapper {
@@ -148,66 +199,4 @@ $sizes: (
       }
     }
   }
-}
-
-
-// VARIANTS
-
-$variants: (
-  "active": (
-    "background": var(--tinctus-primary-50),
-    "border": var(--tinctus-primary-400),
-    "border-focus": var(--tinctus-primary-500),
-    "focus": var(--tinctus-primary-100),
-    "icon": var(--tinctus-primary-600),
-    "icon-hover": var(--tinctus-primary-400),
-  ),
-  "error": (
-    "background": var(--tinctus-error-25),
-    "border": var(--tinctus-error-400),
-    "border-focus": var(--tinctus-error-500),
-    "focus": var(--tinctus-error-100),
-    "icon": var(--tinctus-error-400),
-    "icon-hover": var(--tinctus-error-500),
-  )
-);
-
-@each $variant, $values in $variants {
-  .rosarium-input--#{$variant} {
-    span[class^="rosarium-icon"] {
-      background-color: map.get($values, "icon");
-    }
-
-    .rosarium-input-wrapper {
-      background-color: map.get($values, "background");
-      border-bottom-color: map.get($values, "border");
-
-      &:focus-within {
-        background-color: map.get($values, "focus");
-        border-bottom-color: map.get($values, "border-focus");
-      }
-
-      .rosarium-icon--eye-hide:hover,
-      .rosarium-icon--eye-show:hover {
-        background-color: map.get($values, "icon-hover");
-      }
-    }
-  }
-}
-
-
-// UX TESTING
-
-.rosarium-input-wrapper .rosarium-icon--error {
-  position: absolute;
-  left: -30px;
-}
-
-
-// Input Groups
-
-.rosarium-input-group {
-  display: flex;
-  flex-direction: column;
-  gap: measures.$distance-m;
 }
