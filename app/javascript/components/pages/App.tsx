@@ -5,7 +5,6 @@ import I18N from "@javascript/i18n/I18N";
 
 export const App: React.FC<PropsWithChildren> = ({ children }) => {
   const location = useLocation();
-
   return (
     <div className="spa-body">
       {/* TODO: sidebar component */}
@@ -29,7 +28,7 @@ export const App: React.FC<PropsWithChildren> = ({ children }) => {
               padding: "12px 20px",
               color: "white",
               backgroundColor:
-                location.pathname === "/works"
+                location.pathname === "/app/works"
                   ? "var(--tinctus-primary-700)"
                   : "transparent",
             }}
@@ -41,7 +40,7 @@ export const App: React.FC<PropsWithChildren> = ({ children }) => {
               padding: "12px 20px",
               color: "white",
               backgroundColor:
-                location.pathname === "/students"
+                location.pathname === "/app/students"
                   ? "var(--tinctus-primary-700)"
                   : "transparent",
             }}
@@ -53,7 +52,7 @@ export const App: React.FC<PropsWithChildren> = ({ children }) => {
               padding: "12px 20px",
               color: "white",
               backgroundColor:
-                location.pathname === "/teachers"
+                location.pathname === "/app/teachers"
                   ? "var(--tinctus-primary-700)"
                   : "transparent",
             }}
@@ -63,7 +62,7 @@ export const App: React.FC<PropsWithChildren> = ({ children }) => {
           <li><Link to="/login">{I18N("login.logout")}</Link></li>
         </ul>
       </nav>
-      <main><Outlet /></main>
+      <Outlet />
     </div>
   );
 };

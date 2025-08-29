@@ -9,10 +9,10 @@ export const Students: React.FC = () => {
   useDocumentTitle(`Estudio Morera - ${I18N("students.title")}`);
 
   return (
-    <>
+    <main className="students-page">
       <RosariumH1>{I18N("students.title")}</RosariumH1>
       <p> Work in progresssooo</p>
-    </>
+    </main>
   );
 };
 
