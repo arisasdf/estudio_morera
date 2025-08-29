@@ -21,11 +21,21 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
-    # Work
-    field :all_works, [WorkType], null: false,
-      description: "Retrieves all works"
+    # All Works
+    field :all_works, [WorkType], null: false, description: "Retrieves all works"
+
     def all_works
       Work.all
     end
+
+    # One Work
+    field :work, WorkType, null: true, description: "Find a work by ID" do
+      argument :id, ID, required: true, description: "ID of the work."
+    end
+
+    def work(id:)
+      Work.find_by(id: id)
+    end
+
   end
 end

@@ -8,10 +8,10 @@ export const Dashboard: React.FC = () => {
   useDocumentTitle("Estudio Morera");
 
   return (
-    <>
+    <main>
       <RosariumH1>{I18N("dash.title")}</RosariumH1>
       <p> Work in progresssooo</p>
-    </>
+    </main>
   );
 };
 

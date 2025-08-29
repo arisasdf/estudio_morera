@@ -23,6 +23,11 @@ export default {
   // Works
   works: {
     title: "Works",
+    new: "Add Work",
+    attributes: {
+      title: "Title",
+      composer: "Composer",
+    }
   },
 
   // Students

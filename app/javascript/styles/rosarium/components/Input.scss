@@ -17,7 +17,7 @@ $input-border-thickness-large: 3px;
   align-items: center;
   position: relative;
 
-  border-bottom-style: solid;
+  border-style: solid;
   transition: background-color 0.3s ease;
 
   // TODO: move to variants and change for locked
@@ -100,6 +100,7 @@ $sizes: (
 
     .rosarium-input-wrapper {
       padding: map.get($values, "v-padding") map.get($values, "h-padding");
+      // border-width: 1px 1px map.get($values, "border-bottom-thickness") 1px;
       border-bottom-width: map.get($values, "border-bottom-thickness");
       gap: map.get($values, "h-padding");
 
@@ -154,16 +155,18 @@ $sizes: (
 
 $variants: (
   "active": (
-    "background": var(--tinctus-primary-25),
+    "background": var(--tinctus-primary-50),
     "border": var(--tinctus-primary-400),
-    "focus": var(--tinctus-primary-50),
+    "border-focus": var(--tinctus-primary-500),
+    "focus": var(--tinctus-primary-100),
     "icon": var(--tinctus-primary-600),
     "icon-hover": var(--tinctus-primary-400),
   ),
   "error": (
     "background": var(--tinctus-error-25),
     "border": var(--tinctus-error-400),
-    "focus": var(--tinctus-error-50),
+    "border-focus": var(--tinctus-error-500),
+    "focus": var(--tinctus-error-100),
     "icon": var(--tinctus-error-400),
     "icon-hover": var(--tinctus-error-500),
   )
@@ -181,6 +184,7 @@ $variants: (
 
       &:focus-within {
         background-color: map.get($values, "focus");
+        border-bottom-color: map.get($values, "border-focus");
       }
 
       .rosarium-icon--eye-hide:hover,
@@ -197,4 +201,13 @@ $variants: (
 .rosarium-input-wrapper .rosarium-icon--error {
   position: absolute;
   left: -30px;
+}
+
+
+// Input Groups
+
+.rosarium-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: measures.$distance-m;
 }

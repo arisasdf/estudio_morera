@@ -14,6 +14,7 @@ const webpackConfig = generateWebpackConfig({
       "@javascript": path.resolve(__dirname, "../../", 'app/javascript/'),
       "@rosarium": path.resolve(__dirname, "../../", 'app/javascript/components/rosarium/'),
       "@components": path.resolve(__dirname, "../../", 'app/javascript/components/'),
+      "@styles": path.resolve(__dirname, "../../", 'app/javascript/styles/'),
     },
   }
 });

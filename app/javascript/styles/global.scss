@@ -2,12 +2,11 @@
 // We don't want this to be a kitchen sink,
 // but rather a place for truly, really global styles
 
-
-// TEMPORARY HOME PAGE
 body {
-  background-color: var(--tinctus-gray-50);
+  background-color: var(--tinctus-gray-25);
 }
 
+// TEMPORARY HOME PAGE
 .TODO-delete {
   .rosarium-card {
     margin: 15px auto;

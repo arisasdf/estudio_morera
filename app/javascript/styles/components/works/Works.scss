@@ -1,0 +1,9 @@
+@use '../../rosarium.scss';
+
+.works-page {
+  .works-list {
+    display: flex;
+    flex-direction: column;
+    gap: rosarium.$distance-m;
+  }
+}

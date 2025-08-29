@@ -6,7 +6,9 @@ import ReactDOM from "react-dom/client";
 import Home from "@components/pages/Home";
 import Login from "@components/pages/Login";
 import App from "@components/pages/App";
-import Works from "@components/pages/app/Works";
+import Works from "@javascript/components/pages/app/works/Works";
+import NewWork from "@javascript/components/pages/app/works/NewWork";
+import Work from "@javascript/components/pages/app/works/Work";
 import Students from "@javascript/components/pages/app/Students";
 import Dashboard from "@javascript/components/pages/app/Dashboard";
 
@@ -16,15 +18,21 @@ const router = createBrowserRouter([
     Component: Home,
   },
   {
-    path: "/login",
+    path: "login",
     Component: Login,
   },
   {
-    path: "/app",
+    path: "app",
     Component: App,
     children: [
       { index: true, Component: Dashboard },
-      { path: "works", Component: Works },
+      {
+        path: "works", children: [
+          { index: true, Component: Works },
+          { path: "new", Component: NewWork },
+          { path: ":workId", Component: Work },
+        ]
+      },
       { path: "students", Component: Students }
     ],
   },
