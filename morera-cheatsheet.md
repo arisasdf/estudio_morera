@@ -4,6 +4,10 @@ This is a bunch of stuff I wanted to save somewhere -- instructions, notes, comm
 
 ## WSL
 
+> ⚠️ NOTE ⚠️
+> 
+> Install VS Code FIRST para evitar la fatiga
+
 ### Install
 
 In cmd or PowerShell:
@@ -17,11 +21,14 @@ wsl
 
 Optionally set up VS Code:
 
+https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode
+
 Install the VS Code Remote WSL extension
 https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl
 
 ```bash
 wsl
+> sudo apt update
 > code
 ```
 
