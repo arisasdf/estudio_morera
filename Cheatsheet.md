@@ -52,6 +52,14 @@ sudo apt install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
+### Aliases
+
+```bash
+alias bx='bundle exec'
+alias shaka='./bin/shakapacker-dev-server'
+alias serve='bundle exec rails server'
+```
+
 ## GraphQL
 
 I'm an experienced Rails fullstack dev, but I'm entirely new to GraphQL, so this is my learning notepad. We all start somewhere!
@@ -120,3 +128,4 @@ For authorization:
         {loggedIn ? <Redirect to="/dashboard" /> : <PublicHomePage />}
       </Route>
 ```
+

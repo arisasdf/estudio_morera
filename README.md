@@ -48,6 +48,8 @@ postgres=# \\password chris
 
 ## Node
 
+TODO: check if necessary after mise
+
 ```bash
 sudo apt install nodejs
 node -v
@@ -57,12 +59,17 @@ npm -v
 ## Setup
 
 ```bash
+npm install
 bundle install
 bundle exec rails db:create
+bundle exec rails db:migrate
 ```
 
 ## Run
 
+On separate terminals:
+
 ```bash
+./bin/shakapacker-dev-server
 bundle exec rails server
 ```
